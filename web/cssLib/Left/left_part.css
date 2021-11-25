@@ -1,0 +1,90 @@
+/*<------------------------------------------------------------>*/
+/*左边部分*/
+
+#left_part{
+    /*此处的left指的是home.css中max_div的left块*/
+    grid-area: left;
+
+    border-right: 1px solid #272A3AFF;
+
+    background: var(--sidebar-bg);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+}
+
+.log{
+    font-family: "DM Sans",sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: inherit;
+    text-align: center;
+    height: 68px;
+    line-height: 68px;
+
+    letter-spacing: 4px;
+
+}
+
+#left_part ul a:hover{
+    color: white;
+}
+
+#left_menu ul a{
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#left_part a i{
+    margin-right: 8px;
+}
+
+.side_wrapper{
+    padding: 30px;
+}
+
+.side_wrapper h3{
+    font-family: "DM Sans",sans-serif;
+    color: #5c5e6e;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.side_wrapper ul{
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.side_wrapper ul a{
+    margin-bottom: 8px;
+}
+
+#left_bottom{
+    margin-top: auto;
+}
+
+#left_bottom a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    overflow: hidden;
+    color: #9c9cab;
+    padding: 0 20px;
+    height: 52px;
+
+    border-top: 1px solid #272A3AFF;
+    position: relative;
+}
+
+.github_link_home{
+    display: flex;
+    align-items: center;
+
+
+}

@@ -1,0 +1,53 @@
+#comment-title{
+    margin-bottom: 0;
+    padding: 8px 11px;
+    border-bottom: 1px solid var(--form-border-color);
+    background-color: var(--formTitle-bg);
+    border-radius: 2px 2px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.editormd { /*编辑器*/
+    margin-bottom: 5px;
+}
+
+.editormd-toolbar-container {   /*评论框工具栏*/
+    background-color: var(--sidebar-bg);
+}
+
+.cm-s-pastel-on-dark.CodeMirror {  /*评论框代码栏*/
+    background-color: var(--sidebar-bg);
+}
+
+.cm-s-pastel-on-dark .CodeMirror-gutters {  /*代码栏行号*/
+    background-color: var(--sidebar-bg);
+}
+
+.editormd-preview-theme-dark {/*预览框*/
+    background-color: var(--sidebar-bg);
+}
+
+.editormd-preview-theme-dark .editormd-preview-container {/*预览框*/
+   /* color: #888; 字体颜色*/
+    background-color: var(--sidebar-bg);
+}
+
+#comment-submit-button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#comment-submit-button button{
+    padding: 4px 12px;
+    background-color: var(--themeColor);
+    outline: none;
+    border: 1px solid var(--themeColor);
+    box-shadow: 0 2px 4px var(--theme-primary-4);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+

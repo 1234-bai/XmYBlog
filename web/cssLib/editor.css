@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+    overflow: hidden;
+}
+
+.body{
+    width: 100vm;
+    height: 100vh;
+    font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+#editor-header{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #08162f;
+}
+
+#article-manager{
+    width: 88px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    padding-left: 25px;
+
+    font-size: large;
+    color: rgba(124,124,124);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#article-manager a{
+    width: 88px;
+    color: rgba(124,124,124);
+}
+
+#article-title{
+    width: 70%;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+#article-title input{
+    padding: 5px 10px;
+    border: 1px solid rgb(124, 124,124);
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+input{
+    color: rgb(124,124,124);
+    font-size: 15px;
+}
+
+#article-biubiubiu{
+    display: flex;
+    align-items: center;
+    padding: 8px 30px 8px 0px;
+    white-space: nowrap;
+}
+
+#article-biubiubiu button{
+    border-radius: 18px;
+    margin-right: 16px;
+    padding: 5px 16px;
+    font-size: 16px;
+
+    cursor: pointer;
+    border: 1px solid #fc5531;
+}
+
+#article-save{
+    color: #fc5531;
+    background-color: #fff;
+}
+
+#article-send{
+    color: #fff;
+    background-color: #fc5531;
+}

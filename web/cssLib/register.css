@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    background: #1e130c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom right, #9a8478, #1e130c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #9a8478, #1e130c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+label{
+    display: flex;
+    align-items: stretch;
+}
+
+.out-box{
+    border-radius: 10px;
+    border: 1px solid #5c4b42;
+    width: 70%;
+    height: 70%;
+
+    display: flex;
+    box-shadow: -5px 5px 5px #5c4b42;
+}
+
+
+.register-box{
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.register-box .logo-box{
+    height: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    color: wheat;
+}
+
+.logo-box h1{
+    margin-top: 60px;
+}
+
+
+.register-box .login-box{
+    display: none;
+    margin-bottom: 30px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box .register-form{
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+    padding: 0 50px 0 50px;
+}
+
+.register-form div{
+    margin-bottom: 5px;
+    color: bisque;
+}
+
+.register-form input{
+    outline: none;
+    padding: 0;
+    border: 0;
+    border-bottom: solid 2px skyblue;
+    background-color: inherit;
+
+    color: blanchedalmond;
+    font-weight: 600;
+}
+
+.register-form #user-name{
+    width: 100%;
+}
+
+#user-name input{
+    width: 100%;
+}
+
+.register-form #pass-word{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#pass-word .password-div{
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.register-form #submit{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#submit input{
+    border: none;
+    border-radius: 5px;
+
+    background-color: rgb(221, 45, 104);
+    width: 100px;
+    height: 40px;
+    opacity: 90%;
+}
+
+.img-box{
+    width: 50%;
+    background-image: url(../resourse/img/register_background.png);
+    background-size: cover;
+    opacity: 80%;
+    border-radius: 0 10px 10px 0;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.login-box{
+    margin-bottom: 30px;
+    color: wheat;
+}
+
+.login-box a{
+    margin-left: 10px;
+    color: rgb(193, 216, 112);
+}
+
+@media screen and (max-width: 1200px){
+    .register-form #pass-word{
+        flex-direction: column;
+    }
+    #pass-word{
+        margin-top: 20px;
+    }
+    #pass-word .password-div{
+        width: 100%;
+    }
+    .password-div div{
+        margin-bottom: 10px;
+    }
+    #pass-word #password-first{
+        margin-bottom: 20px;
+    }
+    #submit{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .out-box{
+        width: 50%;
+    }
+    .img-box{
+        display: none;
+    }
+    .out-box .register-box{
+        width: 100%;
+        border-radius: 10px;
+        background-image: url(../resourse/img/register_background.png);
+        background-size: cover;
+        opacity: 90%;
+    }
+    .register-box .login-box{
+        display: flex;
+    }
+    .register-form #pass-word{
+        flex-direction: row;
+    }
+    #pass-word{
+        margin-top: 0;
+    }
+    #pass-word .password-div{
+        width: 45%;
+    }
+    .password-div div{
+        margin-bottom: 5px;
+    }
+    #pass-word #password-first{
+        margin-bottom: 5px;
+    }
+    #submit{
+        margin-top: 0;
+    }
+    #submit input{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .logo-box h1 span{
+        display: none;
+    }
+    .logo-box h1::after{
+        content: "Sign Up";
+    }
+    .login-box div{
+        display: none;
+    }
+    .register-form #pass-word{
+        flex-direction: column;
+    }
+    #pass-word{
+        margin-top: 20px;
+    }
+    #pass-word .password-div{
+        width: 100%;
+    }
+    .password-div div{
+        margin-bottom: 10px;
+    }
+    #pass-word #password-first{
+        margin-bottom: 20px;
+    }
+    #submit{
+        margin-top: 10px;
+    }
+}

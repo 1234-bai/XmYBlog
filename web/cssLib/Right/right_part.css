@@ -1,0 +1,215 @@
+#right_part {
+    overflow: auto;
+}
+
+#right_part{
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--sidebar-bg);
+    border-left: 1px solid var(--sidebarBlock-border-color);
+
+    overflow: auto;
+}
+
+#right_top_menu{
+    display: flex;
+
+    align-items: center;
+    height: 60px;
+
+    position: sticky;/*固定悬浮不动*/
+    top: 0;
+
+    background-color: var(--sidebar-bg);
+
+    z-index: 2;
+
+    flex-shrink: 0;
+}
+
+.right_top_menu_button{
+    border: 0;
+    background: 0;
+    color: #64677AFF;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.right_top_menu_button i{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#right_top_menu_hidden_list{
+    position: absolute;
+    top: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: var(--body-bg);
+}
+
+#right_top_menu_hidden_list li{
+    display: flex;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+#right_top_menu_photo{
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+#right_top_menu_photo a{
+    display: flex;
+}
+
+#right_top_menu_photo a h3{
+    margin-right: 20px;
+    color: deepskyblue;
+}
+
+#right_top_menu_photo img{
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+#right_top_menu_photo span:hover{
+    color: navajowhite;
+}
+
+#right_top_menu_photo span{
+    font-weight: 600;
+    font-size: 15px;
+    color: #595b6c;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+#right_calendar{
+    padding: 18px 18px 0 18px;
+}
+
+#calendar_wrapper{
+    position: relative;
+    padding-bottom: 10px;
+    border-radius: 0 0 2px 2px;
+    background-color: #202234FF;
+}
+
+#calendar_wrapper img{
+    width: 90%;
+    height: 149px;
+    display: block;
+    border-radius: 2px 2px 0 0;
+    margin: 0 auto;
+}
+
+#calendar_wrapper #calender_describe{
+    color: #c3c5d5;
+    margin-bottom: 5px;
+    font-family: "DM Sans",sans-serif;
+    font-weight: 600;
+    padding: 0 14px;
+    font-size: 14px;
+}
+
+#calendar_wrapper #calender_date_text{
+    color: #5c5e6e;
+    font-family: "DM Sans",sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 14px;
+}
+
+#calendar_wrapper #calender_date_picture{
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+#calender_date_picture #date_picture_month{
+    background-color: #1687fa;
+    padding: 1px 10px;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: "DM Sans",sans-serif;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+}
+
+#calender_date_picture #date_picture_day{
+    width: 100%;
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "DM Sans",sans-serif;
+    background-color: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+#right_info div{
+    padding: 20px 20px 20px 20px;
+}
+
+#right_info h3{
+    color: #5c5e6e;
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+#info_links{
+    padding: 20px 20px 0;
+}
+
+#info_links ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#info_links li{
+    margin: 0 6px 6px 0;
+    padding: 2px 4px;
+    background-color: #303447FF;
+    font-size: 13px;
+    border-radius: 2px;
+}
+
+#info_links li{
+    display: flex;
+}
+
+#info_comments li{
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.whole_comment .comment_title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.whole_comment .comment_content{
+    padding: 12px;
+    background-color: #303447FF;
+    border-radius: 4px;
+    word-wrap: break-word;
+}
+
+.whole_comment .comment_author{
+    text-align: right;
+    margin-right: 4px;
+}

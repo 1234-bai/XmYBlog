@@ -1,0 +1,61 @@
+:root {
+    --themeColor: #1B86F9;
+    --theme-primary-8: rgba(27,134,249,0.85);
+    --theme-primary-4: rgba(27,134,249,0.4);
+    --theme-primary-2: rgba(27,134,249,0.2);
+}
+
+/*@import "constant.css";*/
+/*需要动态加载的界面，左下角GitHub链接：鼠标悬浮出现头像；右上角数据，悬浮出现数据；右下角隐藏图标，以及主题的变化。*/
+/*颜色需要更改为用constant.css中的常量的表示*/
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbarThumb-bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbarTrack-bg);
+}
+
+*::selection {
+    background: var(--theme-primary-4);
+    color: inherit;
+}
+
+body{
+    line-height: 1.5;
+    font-family: UbuntuMono,"Varela Round","PingFang SC","Microsoft YaHei",Helvetica,Arial,Menlo,Monaco,monospace,sans-serif;
+    overflow: hidden;
+    background: var(--body-bg);
+    color : var(--body-color);
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption, footer, header,
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li{
+    list-style: none;
+}

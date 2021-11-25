@@ -1,0 +1,46 @@
+#max_div{
+    color: var(--body-color);
+    background: var(--body-bg);
+    display: grid;
+    grid-template-columns: 14vw 2fr  17.5vw;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left main right";
+    height: 100vh;
+}
+
+#float_bar{
+    position: absolute;
+    bottom : 30px;
+    right: 30px;
+    width: 30px;
+    height: 40px;
+    z-index: 9;
+}
+
+#float_bar .float_button{
+    width: 40px;
+    height: 40px;
+    background-color: var(--md-summary-bg);
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#float_bar #back_top{
+    transform: translateY(-140px);
+}
+
+#float_bar #theme_transform{
+    transform: translateY(-50px);
+}
+
+#float_bar #up_array{
+    position: absolute;
+    bottom: 0;
+}
+

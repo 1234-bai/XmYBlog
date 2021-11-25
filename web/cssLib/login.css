@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0c1014;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0c1014, #0d1930);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0c1014, #0d1930); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.main-part{
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    border: 1px solid #413e3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 5px 5px 5px #413e3e;
+
+}
+
+.img-box{
+    height: 100%;
+    width: 70%;
+    border-radius: 20px 5px 5px 20px;
+
+    background-size: cover;
+    background-image: url("../resourse/img/background.png");
+    opacity: 80%;
+}
+
+
+.login-box{
+    height: 100%;
+    width: 30%;
+    border-radius: 0 10px 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.login-box #login-title{
+    height: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family:'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    letter-spacing: 5px;
+    color: aliceblue;
+}
+
+.login-box #login-content{
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#login-content .login-text{
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid whitesmoke;
+    background-color: inherit;
+
+    color: whitesmoke;
+}
+
+#login-content i{
+    color: whitesmoke;
+    margin-right: 5px;
+}
+
+#login-content span{
+    width: 188px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#login-content a{
+    font-size: 5px;
+    color: skyblue;
+}
+
+.login-box #login-button{
+    width: 150px;
+    height: 9%;
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    background: #7ec6bc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ebe717, #7ec6bc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ebe717, #7ec6bc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .img-box{
+        display: none;
+    }
+    .main-part .login-box{
+        width: 100%;
+        border-radius: 20px;
+        background-size: cover;
+        background-image: url("../resourse/img/background.png");
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body .main-part{
+        width: 100%;
+        height: 100%;
+    }
+}
