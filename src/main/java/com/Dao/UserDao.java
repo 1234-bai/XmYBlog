@@ -30,14 +30,14 @@ public class UserDao {
      * @author qianxiaoyi
      * @return 返回正数说明正常意义是受改变的行数，返回0说明SQL表中信息插入不成功。返回-1说明出错
     */
-    public static int addUser(String username, String password){
+    public int addUser(String username, String password){
         String sql = "insert into myblog.users(username, password) values(?, ?)";
         int influencedStatements = BaseDao.executeUpdate(BaseDao.getConnection(), sql, new String[]{username, password});
         BaseDao.close();
         return influencedStatements;
     }
 
-    public static int deleteUser(int userID, String username){
+    public int deleteUser(int userID, String username){
         return -1;
     }
 }

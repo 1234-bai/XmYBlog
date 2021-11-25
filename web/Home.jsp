@@ -10,7 +10,7 @@
 <%
     final String admin = "admin";
     String showName = "\u5343\u5C0F\u4E00"; //"千小一"
-    String username = (String)session.getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);
+    String username = (String)session.getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);  //从session获得登录的用户姓名
     if(username == null){
         username = admin;
     } else{
@@ -23,12 +23,21 @@
     <title>XmYBLOG--<%=showName%></title>
     <script src="extraLib/jQuery/jquery.js"></script>
     <script src = extraLib/layer/layer.js></script>
+    <script src="jsLib/CommonFun.js"></script>
     <script src="jsLib/Home.js"></script>
     <link rel="stylesheet" href="extraLib/layer/skin/layer.css">
     <link rel="stylesheet" href="extraLib/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="cssLib/home.css">
     <link rel="stylesheet" href="cssLib/constant.css">
     <link rel="stylesheet" href="cssLib/theme_dark.css">
+    <script>
+        $(function (){
+            sessionStorage.setItem(
+                'username',
+                <%=session.getAttribute(CONSTANTS.LOGIN_DATA.USERID)%>
+            )
+        })
+    </script>
 </head>
 <body>
 <div id = "top"></div>

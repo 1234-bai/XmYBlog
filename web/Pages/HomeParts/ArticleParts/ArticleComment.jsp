@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="extraLib/editormd/css/editormd.css" />
     <link rel="stylesheet" href="cssLib/Center/article_comment.css">
     <script src="extraLib/editormd/js/editormd.min.js"></script>
+    <script src="jsLib/ArticleComment.js"></script>
 </head>
 <body>
 <div id="comment-form">
@@ -18,28 +19,19 @@
         <i class="fa fa-commenting-o"></i>
         发表评论
     </div>
-    <div id="comment-editor">
+    <form id="comment-editor"  method="get" action="${pageContext.servletContext.contextPath}/submitComment">
         <!-- Tips: Editor.md can auto append a `<textarea>` tag -->
         <textarea style="display:none;"></textarea>
-    </div>
+        <input type="password" style="display: none" id="articleID" name="articleID">
+        <input type="password" style="display: none" id="createTime_ms" name="createTime_ms">
+    </form>
     <div id="comment-submit-button">
-        <button>提交评论</button>
+        <button onclick="userFilter(function(){
+                submitComment('${pageContext.servletContext.contextPath}/submitComment',readingArticleId)
+        })">
+            提交评论
+        </button>
     </div>
 </div>
 </body>
-<script>
-    $(function (){
-        editormd("comment-editor",{
-            height : 230,
-            syncScrolling : "single",
-            theme : "dark",
-            previewTheme : 'dark',
-            editorTheme : 'pastel-on-dark',
-            watch : false,
-            toolbarIcons  : "mini",
-            path   : "extraLib/editormd/lib/",
-            placeholder :  '支持Markdown!'
-        })
-    })
-</script>
 </html>

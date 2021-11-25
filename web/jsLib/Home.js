@@ -9,3 +9,4 @@ function showOtherButton() {
         $("#float_angle").attr("class" ,"fa fa-angle-down");
     }
 }
+

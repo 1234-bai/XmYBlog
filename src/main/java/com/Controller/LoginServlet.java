@@ -1,6 +1,6 @@
 package com.Controller;
 
-import com.Service.LoginService;
+import com.Service.UserService;
 import com.Util.CONSTANTS;
 
 import javax.servlet.http.HttpServlet;
@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 //        System.out.println("**Login" + username + "**" + password + "**");
         HttpSession httpSession = req.getSession();
         try {
-            int userID = new LoginService().Login(username, password);
+            int userID = new UserService().Login(username, password);
             httpSession.setAttribute(CONSTANTS.LOGIN_DATA.USERID, userID);
             if(userID >= 0){
                 httpSession.setAttribute(CONSTANTS.LOGIN_DATA.USERNAME, username);

@@ -23,28 +23,7 @@
                 <a href="Pages/test.jsp" target="_blank">
                     <i class = "fa fa-table" style="color: #1B86F9"></i>文章管理
                 </a>
-                <a onclick="jumpToEditor()">
-                    <script>
-                        function jumpToEditor(){
-                            if(parseInt(sessionStorage.getItem('username')) >= 0){
-                                location.href = 'Pages/Editor.jsp'
-                            }else{
-                                layer.open({
-                                    title: '温馨提示',
-                                    content: '亲爱的这位同学，您没有编辑文章的权限呢。登录后才能编辑。',
-                                    shadeClose: true,
-                                    //area: ['400px', '500px'],
-                                    btn: ['登录','关闭'],
-                                    btn1: function(){
-                                        location.href='Pages/Login.jsp';
-                                    },
-                                    btn2: function(){
-                                        layer.close();
-                                    }
-                                })
-                            }
-                        }
-                    </script>
+                <a onclick="userFilter(function (){location.href = 'Pages/Editor.jsp'})">
                     <i class = "fa fa-pencil-square" style="color: #e7339f"></i>新文章
                 </a>
                 <a href="" target="_blank">
@@ -78,12 +57,4 @@
         </div>
     </div>
 </body>
-<script>
-        $(function (){
-            sessionStorage.setItem(
-                'username',
-                <%=session.getAttribute(CONSTANTS.LOGIN_DATA.USERID)%>
-            )
-        })
-</script>
 </html>

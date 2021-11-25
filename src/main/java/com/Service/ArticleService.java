@@ -3,15 +3,11 @@ package com.Service;
 import com.Dao.ArticleDao;
 import com.Entity.Article;
 
-
-import java.sql.Date;
-
-
 public class ArticleService implements ArticleServiceIml{
 
-    ArticleDao articleDao = new ArticleDao();
+    private final ArticleDao articleDao = new ArticleDao();
 
-    public Article[] readAllArticles(String username){
+    public Article[] readPersonArticles(String username){
         if(username == null) {return null;}
         return articleDao.getArticlesAll(username);
     }
@@ -51,6 +47,6 @@ public class ArticleService implements ArticleServiceIml{
     }
 
     public boolean saveArticle(String title, String ownerName, String content, long createTime_ms) {
-        return (articleDao.addArticle(title, ownerName, content, new Date(createTime_ms)) == 1);
+        return (articleDao.addArticle(title, ownerName, content, new java.sql.Date(createTime_ms)) == 1);
     }
 }

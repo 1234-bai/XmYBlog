@@ -6,7 +6,7 @@ import java.sql.Date;
 
 public interface ArticleServiceIml {
 
-    Article[] readAllArticles(String username);
+    Article[] readPersonArticles(String username);
 
     String readTheArticle(int articleID);
 

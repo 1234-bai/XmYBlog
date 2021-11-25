@@ -17,6 +17,9 @@ public class CONSTANTS {
         return sb.toString();
     }
 
+    public static final String SUCCESS = "success";
+    public static final String FAIL = "fail";
+
     public static final class DB_DATA {
         public static final String URL =  "jdbc:mysql://localhost:3306/myblog?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false";
         public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
@@ -57,6 +60,13 @@ public class CONSTANTS {
         public static final String INCREASE = "increase";
         public static final String DECREASE = "decrease";
 
+    }
+
+    public static final class COMMENT_DATA{
+        public static final String OWNER = "username";
+        public static final String CONTENT = "comment-editor-html-code";
+        public static final String ARTICLE_ID = "articleID";
+        public static final String CREATE_TIME_MS = "createTime_ms";
     }
 
 }

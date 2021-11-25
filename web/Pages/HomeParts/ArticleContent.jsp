@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   //username在进入home界面时获得。
-    Article[] articles = new ArticleService().readAllArticles(username);
+    Article[] articles = new ArticleService().readPersonArticles(username);
     boolean haveArticles = (articles != null);
 %>
 <html>
@@ -23,7 +23,7 @@
     <script src="jsLib/ArticleContent.js"></script>
     <link rel="stylesheet" href="cssLib/Center/article_content.css">
     <script>
-    $(function (){
+        $(function (){
             articleSupported = [
                 <%
                     if(haveArticles){   //有用户有文章

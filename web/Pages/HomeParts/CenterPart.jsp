@@ -10,18 +10,11 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="cssLib/Center/center_part.css">
-    <script>
-        //后面要改成和浏览器互动！！
-        function f(event){
-            if(event.keyCode === 13)
-                $("#bar_text").val("**" + $("#bar_text").val() + "**成功读到！！");
-        }
-    </script>
 </head>
 <body>
 <div id = center_part class = outer_div>
     <div id = search_bar>
-        <input id=bar_text type="text" placeholder="search by pressing enter" onkeydown="f(event)" >
+        <input id=bar_text type="text" placeholder="search users by pressing enter" >
     </div>
     <div id = main_part>
         <div id = profile>

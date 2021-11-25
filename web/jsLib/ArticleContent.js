@@ -26,8 +26,9 @@ function backToArticlesCards() {
     $("#articles-content").hide();  //隐藏文章内容
     $("#support_button i").attr('class','fa fa-thumbs-o-up');   //"点赞键"设置为空心状态
     readingArticleIndex = readingArticleId = -1;    //没有正在阅读的文章
-    $("#read_content").empty(); //删除文章展示框子元素
-    $("#read_content").append("<textarea  id=\"article-show\" style=\"display: none\"></textarea>");    //添加预览区域
+    let read_content = $("#read_content");
+    read_content.empty(); //删除文章展示框子元素
+    read_content.append("<textarea  id=\"article-show\" style=\"display: none\"></textarea>");    //添加预览区域
 }
 
 /**
@@ -98,9 +99,10 @@ function showArticle(servletURL, artIndex, articleID) {
             } else{ //成功获取到文章内容，进入文章阅览区
                 $("#article-show").val(msg)   //阅览区加入内容
                 editormd.markdownToHTML("read_content")  //将md语句转化为HTML
-                $("#articles_container_cardList").hide()
-                $("#articles-content").show()
+                $("#articles_container_cardList").hide()    //隐藏卡片
+                $("#articles-content").show()   //展示阅览区
                 readingArticleId = articleID; readingArticleIndex = artIndex
+                sessionStorage.setItem("articleID", articleID);
                 //展示点赞状态
                 if(articleSupported[readingArticleIndex]){  //如果已经点过赞，则为实心状态
                     $("#support_button i").attr('class','fa fa-thumbs-up')
@@ -124,5 +126,16 @@ function showArticle(servletURL, artIndex, articleID) {
 function showCommentBlock() {
     $("#comment-block").show()
     $("#comment-button i").attr('class', 'fa fa-commenting')
-    $(".CodeMirror .cm-s-pastel-on-dark .CodeMirror-wrap .CodeMirror-empty").show()
+    editormd("comment-editor",{ //加载评论编辑区
+        height : 230,
+        syncScrolling : "single",
+        theme : "dark",
+        previewTheme : 'dark',
+        editorTheme : 'pastel-on-dark',
+        watch : false,
+        toolbarIcons  : "mini",
+        path   : "extraLib/editormd/lib/",
+        placeholder :  '支持Markdown!',
+        saveHTMLToTextarea: true
+    })
 }

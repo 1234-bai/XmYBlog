@@ -93,3 +93,24 @@ input{
     color: #fff;
     background-color: #fc5531;
 }
+
+.editormd-toolbar-container {   /*评论框工具栏*/
+    background-color: var(--sidebar-bg);
+}
+
+.cm-s-pastel-on-dark.CodeMirror {  /*评论框代码栏*/
+    background-color: var(--sidebar-bg);
+}
+
+.cm-s-pastel-on-dark .CodeMirror-gutters {  /*代码栏行号*/
+    background-color: var(--sidebar-bg);
+}
+
+.editormd-preview-theme-dark {/*预览框*/
+    background-color: var(--sidebar-bg);
+}
+
+.editormd-preview-theme-dark .editormd-preview-container {/*预览框*/
+    /* color: #888; 字体颜色*/
+    background-color: var(--sidebar-bg);
+}

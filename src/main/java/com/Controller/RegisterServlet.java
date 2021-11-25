@@ -1,6 +1,6 @@
 package com.Controller;
 
-import com.Service.RegisterService;
+import com.Service.UserService;
 import com.Util.CONSTANTS;
 
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ public class RegisterServlet extends HttpServlet {
         String name = req.getParameter(CONSTANTS.REGISTER_DATA.USERNAME);
         String pwd = req.getParameter(CONSTANTS.REGISTER_DATA.PASSWORD);
 //        System.out.println("**"+name+"**"+pwd+"**");
-        if(new RegisterService().Register(name, pwd)){
+        if(new UserService().Register(name, pwd)){
             resp.getWriter().write(CONSTANTS.REGISTER_DATA.REGISTER_SUCCESS);
         } else{
             resp.getWriter().write(CONSTANTS.REGISTER_DATA.REGISTER_ERROR);

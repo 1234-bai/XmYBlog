@@ -13,3 +13,32 @@ function isEmptyText(selector){
     return false;
 }
 
+
+function loginTips(){
+    layer.open({
+        title: '温馨提示',
+        content: '亲爱的这位同学，您没有使用这项功能的权限呢。登录后才能使用哦。',
+        shadeClose: true,
+        //area: ['400px', '500px'],
+        btn: ['登录','关闭'],
+        btn1: function(){
+            location.href='Pages/Login.jsp';
+        },
+        btn2: function(){
+            layer.close();
+        }
+    })
+}
+
+/**
+ * 对函数进行用户限制
+ * @param service
+ */
+function userFilter(service){   //过滤未登录的用户，一些功能只能登录的用户使用
+    if(parseInt(sessionStorage.getItem('username')) > 0){
+        service()
+    }else{
+        loginTips()
+    }
+}
+

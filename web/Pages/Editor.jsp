@@ -10,11 +10,13 @@
 <head>
     <meta charset="utf-8" />
     <title>Simple example - Editor.md examples</title>
-    <link rel="stylesheet" href="../cssLib/editor.css">
     <link rel="stylesheet" href="../extraLib/editormd/css/editormd.css" />
+    <link rel="stylesheet" href="../cssLib/editor.css">
+    <link rel="stylesheet" href="../cssLib/theme_dark.css">
     <script src="../extraLib/jQuery/jquery.js"></script>
     <script src="../jsLib/CommonFun.js"></script>   <%-- 共同使用的JavaScript函数库 --%>
     <script type="text/javascript" src = ../extraLib/layer/layer.js></script>  <%-- 弹出框库 --%>
+    <script src="../extraLib/editormd/js/editormd.min.js"></script>
 </head>
 <body>
 <div id="editor-header">
@@ -77,7 +79,6 @@
     </textarea>
 </div>
 </form>
-<script src="../extraLib/editormd/js/editormd.min.js"></script>
 <script type="text/javascript">
     $(function() {
         editormd("article-editor", {
