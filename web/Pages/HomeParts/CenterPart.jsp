@@ -25,7 +25,7 @@
             </div>
             <div id = profile_avatar>
                 <a href="">
-                    <img src ="resourse/img/adminProfile.jpg" alt="1234">
+                    <img src ="resource/img/adminProfile.jpg" alt="1234">
                 </a>
             </div>
             <div id = profile_msg>

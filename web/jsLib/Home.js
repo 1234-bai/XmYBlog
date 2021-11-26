@@ -1,3 +1,5 @@
+let servletRootPath;    //项目访问servlet的根路径
+
 function showOtherButton() {
     if($("#float_angle").attr("class") === "fa fa-angle-down") {
         $("#theme_transform").hide();

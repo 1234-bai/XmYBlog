@@ -1,4 +1,8 @@
-#comment-title{
+#comment-show-board{
+    margin-bottom: 15px;
+}
+
+.comment-board-title{
     margin-bottom: 0;
     padding: 8px 11px;
     border-bottom: 1px solid var(--form-border-color);
@@ -6,6 +10,72 @@
     border-radius: 2px 2px 0 0;
     font-size: 12px;
     font-weight: 700;
+}
+
+#comment-card-list{
+    border-radius: 4px;
+    padding: 15px 0 15px 16px;
+    background-color: var(--form-bg);
+    overflow: hidden;
+}
+
+.comment-card{
+    margin-top: 5px;
+}
+
+.comment-card-title{
+    display: flex;
+}
+
+.card-title-level{
+    padding: 0 5px;
+    color: var(--layer-color);
+    font-weight: 700;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.card-title-username{
+    margin-left: 8px;
+    color: #00a1d6;
+    font-size: 14px;
+}
+
+.card-title-date{
+    margin: 0 10px;
+    font-size: 14px;
+    color: var(--sidebarTitle-color);
+}
+
+.comment-card-content{
+    display: flex;
+}
+
+.card-avatar{
+    margin-left: 15px;
+    transform: scale(0.8);
+}
+
+.card-avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card-content{
+    word-break: break-word;
+    line-height: 1.75;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 10px 0 10px 10px;
+    max-width: 80%;
+    border-radius: 4px;
+    padding: 6px 11px;
+    background-color: var(--commonBody-bg);
+    box-shadow: 0 4px 8px rgb(0 0 0.2);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .editormd { /*编辑器*/

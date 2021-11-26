@@ -11,8 +11,8 @@
     display: grid;
     grid-template-columns: 1fr;
     position: relative;
-    border-bottom: 1px solid #3E3E3EFF;
-    background-color: #151728FF;
+    border-bottom: 1px solid #3E3E3E;
+    background-color: var(--searchbar-bg);
     z-index: 5;
 }
 
@@ -20,7 +20,7 @@
     padding: 0 54px;
     border: none;
     background-color: transparent;
-    background-image: url("../../resourse/img/mirror.png");
+    background-image: url("../../resource/img/mirror.png");
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: 25px 50%;

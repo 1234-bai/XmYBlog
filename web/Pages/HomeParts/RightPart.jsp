@@ -73,7 +73,7 @@
         <div id = right_top_menu_photo>
             <a href= <%= hasUser ? "Home.jsp" : "Pages/Login.jsp" %> >
                 <%
-                    out.write(hasUser ? "<img src=\"resourse/img/adminProfile.jpg\">" : "<span>登录/注册</span>");
+                    out.write(hasUser ? "<img src=\"resource/img/adminProfile.jpg\">" : "<span>登录/注册</span>");
                 %>
             </a>
         </div>

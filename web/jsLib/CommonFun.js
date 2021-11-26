@@ -13,6 +13,12 @@ function isEmptyText(selector){
     return false;
 }
 
+function serverErrorTips(){
+    layer.alert("服务器返回错误!",{
+        title:'警告！',
+        icon:0
+    })
+}
 
 function loginTips(){
     layer.open({
@@ -35,7 +41,7 @@ function loginTips(){
  * @param service
  */
 function userFilter(service){   //过滤未登录的用户，一些功能只能登录的用户使用
-    if(parseInt(sessionStorage.getItem('username')) > 0){
+    if(parseInt(sessionStorage.getItem('userID')) > 0){
         service()
     }else{
         loginTips()

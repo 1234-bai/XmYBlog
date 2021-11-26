@@ -64,6 +64,10 @@
         <servlet-name>addCommentServlet</servlet-name>
         <servlet-class>com.Controller.addCommentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>readCommentsServlet</servlet-name>
+        <servlet-class>com.Controller.readCommentsServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -89,6 +93,9 @@
         <servlet-name>addCommentServlet</servlet-name>
         <url-pattern>/submitComment</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>readCommentsServlet</servlet-name>
+        <url-pattern>/readComments</url-pattern>
+    </servlet-mapping>
 
 </web-app>

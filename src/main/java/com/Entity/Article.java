@@ -17,13 +17,6 @@ public class Article {
   public Article() {
   }
 
-  public Article(String ownerName, String title, Date createDate, String content) {
-    this.ownerName = ownerName;
-    this.title = title;
-    this.createDate = createDate;
-    this.content = content;
-  }
-
   public String getTitle() {
     return title;
   }

@@ -1,5 +1,6 @@
 package com.Controller;
 
+import com.Service.ArticleService;
 import com.Service.CommentService;
 import com.Util.CONSTANTS;
 
@@ -13,10 +14,15 @@ public class addCommentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String owner = (String) session.getAttribute(CONSTANTS.COMMENT_DATA.OWNER);
         String content = request.getParameter(CONSTANTS.COMMENT_DATA.CONTENT);
-        String articleID = (request.getParameter(CONSTANTS.COMMENT_DATA.ARTICLE_ID));
+        long articleID = Long.parseLong(request.getParameter(CONSTANTS.COMMENT_DATA.ARTICLE_ID));
         String createTime_ms = (request.getParameter(CONSTANTS.COMMENT_DATA.CREATE_TIME_MS));
-        boolean addComment = new CommentService().addComment(owner, Long.parseLong(articleID), content, Long.parseLong(createTime_ms));
-        response.getWriter().write(addComment ? CONSTANTS.SUCCESS : CONSTANTS.FAIL);
+        boolean addComment = new CommentService().addComment(owner, articleID, content, Long.parseLong(createTime_ms));
+        if(addComment){
+            new ArticleService().increaseCommentNums((int) articleID);
+            response.getWriter().write(CONSTANTS.SUCCESS);
+        } else{
+            response.getWriter().write(CONSTANTS.FAIL);
+        }
     }
 
     @Override

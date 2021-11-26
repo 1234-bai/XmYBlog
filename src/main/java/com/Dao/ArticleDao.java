@@ -89,7 +89,11 @@ public class ArticleDao {
     
 
     public int updateCommentNums(int articleID, long commentNums) {
-        return -1;
+        String sql = "update myblog.articles set commentNums = ? where articleID = ?";
+        Object[] params = {commentNums,articleID};
+        int influencedLines = BaseDao.executeUpdate(BaseDao.getConnection(), sql, params);
+        BaseDao.close();
+        return influencedLines;
     }
     
 

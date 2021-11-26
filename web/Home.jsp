@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    final String admin = "admin";
+    final String admin = "qian_xiao_yi";
     String showName = "\u5343\u5C0F\u4E00"; //"千小一"
     String username = (String)session.getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);  //从session获得登录的用户姓名
     if(username == null){
@@ -32,9 +32,14 @@
     <link rel="stylesheet" href="cssLib/theme_dark.css">
     <script>
         $(function (){
+            servletRootPath = '${pageContext.servletContext.contextPath}'
+            sessionStorage.setItem(
+                'userID',
+                <%=session.getAttribute(CONSTANTS.LOGIN_DATA.USERID)%>
+            )
             sessionStorage.setItem(
                 'username',
-                <%=session.getAttribute(CONSTANTS.LOGIN_DATA.USERID)%>
+                '<%=username%>'
             )
         })
     </script>

@@ -6,9 +6,9 @@ import java.sql.Date;
 
 public interface ArticleServiceIml {
 
-    Article[] readPersonArticles(String username);
+    Article[] getPersonArticles(String username);
 
-    String readTheArticle(int articleID);
+    String getArticleContent(int articleID);
 
     boolean increaseSupportNums(int articleID);
 
@@ -20,4 +20,7 @@ public interface ArticleServiceIml {
 
     boolean saveArticle(String title, String ownerName, String content, long createTime_ms);
 
+    boolean increaseCommentNums(int articleID);
+
+    boolean decreaseCommentNums(int articleID);
 }

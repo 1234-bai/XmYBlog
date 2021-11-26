@@ -1,5 +1,3 @@
-
-
 function submitComment(servletURL, articleID) {
     $("#articleID").val(articleID)
     $("#createTime_ms").val(new Date().getTime())
@@ -14,18 +12,20 @@ function submitComment(servletURL, articleID) {
                     title : '信息',
                     icon : 1
                 })
+                $("#comment-button").click()
+                let select = $("#commentNums");
+                select.text(parseInt(select.text())+1)
+                select = $("#article_card"+readingArticleIndex+" .comment-nums")   //点击量加1
+                select.text(parseInt(select.text())+1)
             } else{
-                layer.alert("保存失败！",{
+                layer.alert("保存失败！也许是文本太长了呢！",{
                     title:'信息',
                     icon:0
                 })
             }
         },
         error:function () {
-            layer.alert("服务器返回错误!",{
-                title:'警告！',
-                icon:0
-            })
+            serverErrorTips()
         }
     })
 }

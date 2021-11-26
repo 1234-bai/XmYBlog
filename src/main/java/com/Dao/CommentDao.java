@@ -20,13 +20,14 @@ public class CommentDao {
         try {
             while (res.next()){
                 Comment comment = new Comment();
-                comment.setCommentId(res.getInt("commentTD"));
+                comment.setCommentId(res.getInt("commentID"));
                 comment.setOwner(res.getString("owner"));
                 comment.setTargetArticleId(res.getInt("targetArticleID"));
                 comment.setContent(res.getString("content"));
-                comment.setCrateDate(res.getDate("createDate"));
+                comment.setCreateDate(res.getDate("createDate"));
                 comments.add(comment);
             }
+            BaseDao.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,7 +66,7 @@ public class CommentDao {
      */
     public int addComment(String owner, long articleID, String content, java.sql.Date createDate) {
         String sql = "insert into " +
-                "myblog.comments(owner, targetArticleID, content, crateDate) " +
+                "myblog.comments(owner, targetArticleID, content, createDate) " +
                 "values (?, ?, ?, ?)";
         Object[] params = {owner, articleID, content, createDate};
         int influencedLines = BaseDao.executeUpdate(BaseDao.getConnection(), sql, params);

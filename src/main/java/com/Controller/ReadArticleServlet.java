@@ -1,7 +1,9 @@
 package com.Controller;
 
+import com.Entity.Article;
 import com.Service.ArticleService;
 import com.Util.CONSTANTS;
+import com.alibaba.fastjson.JSONObject;
 
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -16,14 +18,15 @@ public class ReadArticleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response){
         String articleIDStr = request.getParameter(CONSTANTS.ARTICLES_DATA.ARTICLE_ID);
         int articleID = Integer.parseInt(articleIDStr);
-        ArticleService article = new ArticleService();
-        String content = article.readTheArticle(articleID);
+        ArticleService articleService = new ArticleService();
+        Article article = articleService.getArticleInfo(articleID);
         try {
-            if(content == null){
-                response.getWriter().write(CONSTANTS.ARTICLES_DATA.FAIL);
+
+            if(article == null){
+                response.getWriter().write("{\"fail\": true}");
             } else{ //成功获得文章内容。然后增加点击量
-                article.increaseClickNums(articleID);
-                response.getWriter().write(content);
+                articleService.increaseClickNums(articleID);
+                response.getWriter().write(JSONObject.toJSONString(article));
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   //username在进入home界面时获得。
-    Article[] articles = new ArticleService().readPersonArticles(username);
+    Article[] articles = new ArticleService().getPersonArticles(username);
     boolean haveArticles = (articles != null);
 %>
 <html>
@@ -88,11 +88,11 @@
                 <i class="fa fa-pencil"></i>
                 编辑
             </button>
-            <button id="support_button" class="read_button" onclick="supportArticle('${pageContext.request.contextPath}/supportArticle')">
+            <button id="support_button" class="read_button" onclick="supportArticle(servletRootPath+'/supportArticle')">
                 <i class="fa fa-thumbs-o-up"></i>
                 点赞
             </button>
-            <button id="comment-button" class="read_button" onclick="showCommentBlock()">
+            <button id="comment-button" class="read_button" onclick="userFilter(function (){showCommentBlock(servletRootPath+'/readComments')})">
                 <i class="fa fa-commenting-o"></i>
                 评论
             </button>
@@ -130,7 +130,7 @@
             </div>
         </div>
         <div id="comment-block" style="display: none">
-            <%@include file="ArticleParts/ArticleComment.jsp"%>
+            <%@include file="ArticleParts/Comment.jsp"%>
         </div>
     </div>
 </body>

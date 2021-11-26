@@ -7,7 +7,7 @@ public class Comment {
   private String owner;
   private long targetArticleId;
   private String content;
-  private java.sql.Date crateDate;
+  private java.sql.Date createDate;
 
 
   public long getCommentId() {
@@ -46,12 +46,12 @@ public class Comment {
   }
 
 
-  public java.sql.Date getCrateDate() {
-    return crateDate;
+  public java.sql.Date getCreateDate() {
+    return createDate;
   }
 
-  public void setCrateDate(java.sql.Date crateDate) {
-    this.crateDate = crateDate;
+  public void setCreateDate(java.sql.Date createDate) {
+    this.createDate = createDate;
   }
 
 }
