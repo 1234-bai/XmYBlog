@@ -19,6 +19,16 @@ public class CONSTANTS {
 
     public static final String SUCCESS = "success";
     public static final String FAIL = "fail";
+    public static final String SHOW_NAME = "showName";
+
+
+    public static final class USER_DATA{
+        public static final String USERID = "useID";
+        public static final String USERNAME = "username";
+        public static final String PASSWORD = "password";
+        public static final String NICKNAME = "nickname";
+        public static final String AVATAR_TYPE = "avatarType";
+    }
 
     public static final class DB_DATA {
         public static final String URL =  "jdbc:mysql://localhost:3306/myblog?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false";
@@ -28,10 +38,7 @@ public class CONSTANTS {
     }
 
     public static final class LOGIN_DATA{
-        public static final String USERID = "useID";
-        public static final String USERNAME = "username";
         public static final String PASSWORD = "password";
-
         public static final String LOGIN_FAIL = "login_fail";
         public static final String LOGIN_SUCCESS = "login_success";
     }
@@ -39,7 +46,6 @@ public class CONSTANTS {
     public static final class REGISTER_DATA{
         public static final String USERNAME = "username";
         public static final String PASSWORD = "password";
-
         public static final String REGISTER_ERROR = "register_error";
         public static final String REGISTER_SUCCESS = "register_success";
     }
@@ -67,6 +73,12 @@ public class CONSTANTS {
         public static final String CONTENT = "comment-editor-html-code";
         public static final String ARTICLE_ID = "articleID";
         public static final String CREATE_TIME_MS = "createTime_ms";
+    }
+
+    public static final class IMAGE_UPLOAD{
+        public static final String RELATIVE_ROOT = "/resource/img/";
+        public static final String RELATIVE_PATH = RELATIVE_ROOT + "userAvatar";
+        public static final String RELATIVE_TMP_PATH = RELATIVE_ROOT + "temp";
     }
 
 }

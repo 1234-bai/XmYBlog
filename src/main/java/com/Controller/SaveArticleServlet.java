@@ -13,7 +13,7 @@ public class SaveArticleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp){
         String title = req.getParameter(CONSTANTS.ARTICLES_DATA.TITLE);
         String content = req.getParameter(CONSTANTS.ARTICLES_DATA.CONTENT);
-        String username = (String)req.getSession().getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);
+        String username = (String)req.getSession().getAttribute(CONSTANTS.USER_DATA.USERNAME);
         long createTime_ms = Long.parseLong(req.getParameter(CONSTANTS.ARTICLES_DATA.CREATE_DATE_MS));
         System.out.println("************");
         System.out.println(title);

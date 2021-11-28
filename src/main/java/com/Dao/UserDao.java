@@ -15,9 +15,11 @@ public class UserDao {
         try{
             if(resultSet!=null && resultSet.next()){
                 user = new User();
-                user.setUserID(resultSet.getInt(1));
-                user.setUsername(resultSet.getString(2));
-                user.setPassword(resultSet.getString(3));
+                user.setUserID(resultSet.getInt("userID"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setNickname(resultSet.getString("nickname"));
+                user.setAvatarType(resultSet.getString("avatarType"));
             }
             BaseDao.close();
         } catch (SQLException e){

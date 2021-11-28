@@ -1,4 +1,5 @@
 <%@ page import="com.Util.CONSTANTS" %>
+<%@ page import="com.Entity.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: QianXiaoYi
@@ -8,13 +9,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    final String admin = "qian_xiao_yi";
-    String showName = "\u5343\u5C0F\u4E00"; //"千小一"
-    String username = (String)session.getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);  //从session获得登录的用户姓名
-    if(username == null){
-        username = admin;
-    } else{
+    String showName = "qian_xiao_yi";
+    String username = (String)session.getAttribute(CONSTANTS.USER_DATA.USERNAME);  //从session获得登录的用户姓名
+    Integer userID = -1;
+    String nickname = "千小一";
+    String avatarType = "jpg";
+    if(username != null){   //说明成功登录
         showName = username;
+        userID = (Integer) session.getAttribute(CONSTANTS.USER_DATA.USERID);
+        nickname = (String)session.getAttribute(CONSTANTS.USER_DATA.NICKNAME);
+        avatarType = (String)session.getAttribute(CONSTANTS.USER_DATA.AVATAR_TYPE);
+    }
+    String name = (String)session.getAttribute(CONSTANTS.SHOW_NAME);    //说明在查看别人的界面
+    if(name != null){
+        showName = name;
     }
 %>
 <html>
@@ -25,21 +33,34 @@
     <script src = extraLib/layer/layer.js></script>
     <script src="jsLib/CommonFun.js"></script>
     <script src="jsLib/Home.js"></script>
+    <script src="jsLib/ImageUpload.js"></script>
     <link rel="stylesheet" href="extraLib/layer/skin/layer.css">
     <link rel="stylesheet" href="extraLib/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="cssLib/home.css">
     <link rel="stylesheet" href="cssLib/constant.css">
     <link rel="stylesheet" href="cssLib/theme_dark.css">
     <script>
-        $(function (){
+        $(function (){  //将数据存入本地对话，方便js使用
             servletRootPath = '${pageContext.servletContext.contextPath}'
             sessionStorage.setItem(
                 'userID',
-                <%=session.getAttribute(CONSTANTS.LOGIN_DATA.USERID)%>
+                <%=session.getAttribute(CONSTANTS.USER_DATA.USERID)%>
             )
             sessionStorage.setItem(
                 'username',
                 '<%=username%>'
+            )
+            sessionStorage.setItem(
+                'nickname',
+                '<%=nickname%>'
+            )
+            sessionStorage.setItem(
+                'avatarType',
+                '<%=avatarType%>'
+            )
+            sessionStorage.setItem(
+                'showName',
+                '<%=showName%>>'
             )
         })
     </script>

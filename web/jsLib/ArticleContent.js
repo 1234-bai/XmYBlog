@@ -157,7 +157,7 @@ function showCommentBlock(servletURL) {
                     '            </div>\n' +
                     '            <div class="comment-card-content">\n' +
                     '                <div class="card-avatar">\n' +
-                    '                    <img src="'+servletRootPath+'/resource/img/'+msg[i].owner+'.jpg" alt="sorry, the picture failed">\n' +
+                    '                    <img src="'+servletRootPath+'/WEB-INF/lib/upload/img/userAvatar/'+msg[i].owner+'.jpg" alt="sorry, the picture failed">\n' +
                     '                </div>\n' +
                     '                <div class="card-content">'+msg[i].content+'</div>\n' +
                     '            </div>\n' +

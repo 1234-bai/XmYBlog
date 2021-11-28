@@ -1,5 +1,6 @@
 package com.Controller;
 
+import com.Entity.User;
 import com.Service.UserService;
 import com.Util.CONSTANTS;
 
@@ -14,15 +15,17 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         //数据提交，保证数据为合法输入
-        String username = req.getParameter(CONSTANTS.LOGIN_DATA.USERNAME);
+        String username = req.getParameter(CONSTANTS.USER_DATA.USERNAME);
         String password =  req.getParameter(CONSTANTS.LOGIN_DATA.PASSWORD);
 //        System.out.println("**Login" + username + "**" + password + "**");
         HttpSession httpSession = req.getSession();
         try {
-            int userID = new UserService().Login(username, password);
-            httpSession.setAttribute(CONSTANTS.LOGIN_DATA.USERID, userID);
-            if(userID >= 0){
-                httpSession.setAttribute(CONSTANTS.LOGIN_DATA.USERNAME, username);
+            User user = new UserService().Login(username, password);
+            if(user != null){
+                httpSession.setAttribute(CONSTANTS.USER_DATA.USERID, user.getUserID());
+                httpSession.setAttribute(CONSTANTS.USER_DATA.USERNAME, username);
+                httpSession.setAttribute(CONSTANTS.USER_DATA.NICKNAME, user.getNickname());
+                httpSession.setAttribute(CONSTANTS.USER_DATA.AVATAR_TYPE, user.getAvatarType());
                 resp.getWriter().write(CONSTANTS.LOGIN_DATA.LOGIN_SUCCESS);
             } else{
                 resp.getWriter().write(CONSTANTS.LOGIN_DATA.LOGIN_FAIL);

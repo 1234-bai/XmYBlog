@@ -4,7 +4,9 @@ public class User {
 
     private int userID;
     private String username;
-    private  String password;
+    private String password;
+    private String nickname;
+    private String avatarType;
 
     public User() {
     }
@@ -37,5 +39,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getAvatarType() {
+        return avatarType;
+    }
+
+    public void setAvatarType(String avatarType) {
+        this.avatarType = avatarType;
     }
 }

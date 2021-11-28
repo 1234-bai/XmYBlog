@@ -65,7 +65,7 @@
       type:"post",
       dataType:"text",
       data: {
-        "<%=CONSTANTS.LOGIN_DATA.USERNAME%>": username,
+        "<%=CONSTANTS.USER_DATA.USERNAME%>": username,
         "<%=CONSTANTS.LOGIN_DATA.PASSWORD%>": password
       },
       success:function (data) {

@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   //username在进入home界面时获得。
-    Article[] articles = new ArticleService().getPersonArticles(username);
+    Article[] articles = new ArticleService().getPersonArticles(showName);
     boolean haveArticles = (articles != null);
 %>
 <html>

@@ -21,10 +21,12 @@
         <filter-name>loginFilter</filter-name>
         <filter-class>com.Filter.LoginFilter</filter-class>
     </filter>
+<!--    编辑页过滤器-->
     <filter>
         <filter-name>editorFilter</filter-name>
         <filter-class>com.Filter.EditorFilter</filter-class>
     </filter>
+<!--    过滤器映射-->
     <filter-mapping>
         <filter-name>encoding</filter-name>
         <url-pattern>/*</url-pattern>
@@ -32,6 +34,10 @@
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
         <url-pattern>/Pages/Login.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/Pages/Login</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>editorFilter</filter-name>
@@ -68,34 +74,50 @@
         <servlet-name>readCommentsServlet</servlet-name>
         <servlet-class>com.Controller.readCommentsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>imageUploadServlet</servlet-name>
+        <servlet-class>com.Controller.imageUploadServlet</servlet-class>
+    </servlet>
 
+<!--    账号登录-->
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/Pages/Login</url-pattern>
     </servlet-mapping>
+<!--    账号注册-->
     <servlet-mapping>
         <servlet-name>registerServlet</servlet-name>
         <url-pattern>/Pages/Register</url-pattern>
     </servlet-mapping>
+<!--    文章发布-->
     <servlet-mapping>
         <servlet-name>saveArticleServlet</servlet-name>
         <url-pattern>/saveArticle</url-pattern>
     </servlet-mapping>
+<!--    文章阅读-->
     <servlet-mapping>
         <servlet-name>readArticleServlet</servlet-name>
         <url-pattern>/readArticle</url-pattern>
     </servlet-mapping>
+<!--    文章点赞-->
     <servlet-mapping>
         <servlet-name>supportServlet</servlet-name>
         <url-pattern>/supportArticle</url-pattern>
     </servlet-mapping>
+<!--    评论提交-->
     <servlet-mapping>
         <servlet-name>addCommentServlet</servlet-name>
         <url-pattern>/submitComment</url-pattern>
     </servlet-mapping>
+<!--    评论展示-->
     <servlet-mapping>
         <servlet-name>readCommentsServlet</servlet-name>
         <url-pattern>/readComments</url-pattern>
+    </servlet-mapping>
+    <!-- 图像上传   -->
+    <servlet-mapping>
+        <servlet-name>imageUploadServlet</servlet-name>
+        <url-pattern>/imageUpload</url-pattern>
     </servlet-mapping>
 
 </web-app>

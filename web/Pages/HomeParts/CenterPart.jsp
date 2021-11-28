@@ -24,8 +24,8 @@
                 </div>
             </div>
             <div id = profile_avatar>
-                <a href="">
-                    <img src ="resource/img/adminProfile.jpg" alt="1234">
+                <a onclick="<%=(username != null && username.equals(showName)) ? "openImageUploadPage(servletRootPath+'/imageUpload')" : "toLogin()"%>">
+                    <img src ="<%=pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+showName+"."+avatarType%>">
                 </a>
             </div>
             <div id = profile_msg>

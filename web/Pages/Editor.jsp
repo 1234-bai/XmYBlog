@@ -78,7 +78,6 @@
         ```
     </textarea>
 </div>
-</form>
 <script type="text/javascript">
     $(function() {
         editormd("article-editor", {

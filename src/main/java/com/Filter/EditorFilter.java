@@ -17,7 +17,7 @@ public class EditorFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain){
         HttpSession httpSession = ((HttpServletRequest) servletRequest).getSession();
-        String username = (String)httpSession.getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);
+        String username = (String)httpSession.getAttribute(CONSTANTS.USER_DATA.USERNAME);
         try {
             if(username == null){
                 ((HttpServletResponse)servletResponse).sendRedirect("Login.jsp");

@@ -67,11 +67,7 @@
 
 #right_top_menu_photo a{
     display: flex;
-}
-
-#right_top_menu_photo a h3{
-    margin-right: 20px;
-    color: deepskyblue;
+    cursor: pointer;
 }
 
 #right_top_menu_photo img{

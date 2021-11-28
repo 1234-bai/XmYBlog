@@ -48,3 +48,6 @@ function userFilter(service){   //过滤未登录的用户，一些功能只能�
     }
 }
 
+function toLogin(){
+    location.href = 'Pages/Login.jsp';
+}

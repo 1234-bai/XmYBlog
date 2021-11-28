@@ -15,7 +15,7 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String username = (String)((HttpServletRequest)servletRequest).getSession().getAttribute(CONSTANTS.LOGIN_DATA.USERNAME);
+        String username = (String)((HttpServletRequest)servletRequest).getSession().getAttribute(CONSTANTS.USER_DATA.USERNAME);
         if(username != null){
             ((HttpServletResponse)servletResponse).sendRedirect("../Home.jsp");
         }

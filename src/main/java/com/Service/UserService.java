@@ -7,15 +7,17 @@ public class UserService {
 
     private final UserDao userDao = new UserDao();
 
-    public int Login(String username, String password) {
+    public User Login(String username, String password) {
         User user = userDao.getUser(username);
-        if (user == null) {
-            return -1;
+        if(user == null || user.getPassword().equals(password)){    //利用或运算符的短路特性
+            return user;
         }
-        return user.getPassword().equals(password) ? user.getUserID() : -2;
+        return null;
     }
 
     public boolean Register(String name, String password) {
         return userDao.addUser(name, password) == 1;
     }
+
+
 }

@@ -54,6 +54,7 @@ hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 a{
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 ul, li{
