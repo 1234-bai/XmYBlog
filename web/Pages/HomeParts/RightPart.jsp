@@ -40,7 +40,7 @@
             </ul>
         </div>
         <div id = right_top_menu_photo>
-            <a onclick="toLogin()" >
+            <a onclick="<%= hasUser ? "logout()" : "toLogin()"%>" >
                 <%
                     out.write(hasUser ? "<img src=\""+pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+username+"."+avatarType+"\">" : "<span>登录/注册</span>");
                 %>

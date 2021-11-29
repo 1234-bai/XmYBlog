@@ -17,7 +17,7 @@
 <p onclick="f()">点击我，回到主页吧。</p>
 <script>
     function f() {
-        location.href = 'Home.jsp'
+        location.href = '../Home.jsp'
     }
 </script>
 </body>

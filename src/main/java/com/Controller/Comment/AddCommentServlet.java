@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.Comment;
 
 import com.Service.ArticleService;
 import com.Service.CommentService;
@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-public class addCommentServlet extends HttpServlet {
+public class AddCommentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();

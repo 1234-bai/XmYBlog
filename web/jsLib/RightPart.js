@@ -28,3 +28,15 @@ $(function () {
 function upperFirstLetter(word) {
     return word.substring(0,1).toUpperCase()+word.substring(1);
 }
+
+function logout(){
+    confirmOperation(
+        function () {
+            location.href = servletRootPath + "/logout"
+        },
+        '询问',
+        '确认要注销吗？',
+        '注销',
+        3
+    )
+}

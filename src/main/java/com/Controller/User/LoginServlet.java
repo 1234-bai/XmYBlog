@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.User;
 
 import com.Entity.User;
 import com.Service.UserService;
@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
                 httpSession.setAttribute(CONSTANTS.USER_DATA.USERNAME, username);
                 httpSession.setAttribute(CONSTANTS.USER_DATA.NICKNAME, user.getNickname());
                 httpSession.setAttribute(CONSTANTS.USER_DATA.AVATAR_TYPE, user.getAvatarType());
+                httpSession.setAttribute(CONSTANTS.SHOW_NAME, username);
                 resp.getWriter().write(CONSTANTS.LOGIN_DATA.LOGIN_SUCCESS);
             } else{
                 resp.getWriter().write(CONSTANTS.LOGIN_DATA.LOGIN_FAIL);

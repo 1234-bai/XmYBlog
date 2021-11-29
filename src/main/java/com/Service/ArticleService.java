@@ -63,7 +63,17 @@ public class ArticleService implements ArticleServiceIml{
         return articleDao.updateCommentNums(articleID,oldCommentNums - 1) == 1;
     }
 
-    public boolean saveArticle(String title, String ownerName, String content, long createTime_ms) {
-        return (articleDao.addArticle(title, ownerName, content, new java.sql.Date(createTime_ms)) == 1);
+    public boolean saveArticle(String title, String ownerName, String content, String summary, long createTime_ms, boolean isDraft) {
+        return (articleDao.addArticle(title, ownerName, content, summary, new java.sql.Date(createTime_ms), isDraft) == 1);
+    }
+
+    @Override
+    public boolean deleteArticle(int articleID) {
+        return articleDao.deleteArticle(articleID) == 1;
+    }
+
+    @Override
+    public boolean updateArticle(int articleID, String title, String content, String summary, long lastEditTime_ms, boolean isDraft) {
+        return articleDao.updateArticle(articleID, title, content, summary, new java.sql.Date(lastEditTime_ms), isDraft) == 1;
     }
 }

@@ -10,8 +10,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.List;
+import java.util.Locale;
 
-public class imageUploadServlet extends HttpServlet {
+public class ImageUploadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
@@ -60,6 +61,7 @@ public class imageUploadServlet extends HttpServlet {
             if(fileItem.isFormField()){continue;}
             String uploadFileName = fileItem.getName();
             String fileType = uploadFileName.substring(uploadFileName.lastIndexOf("."));
+            fileType = fileType.toLowerCase(Locale.ROOT);
             String realPath = uploadPath + "/" + username + fileType;
             InputStream input = fileItem.getInputStream();
             FileOutputStream output = new FileOutputStream(realPath);

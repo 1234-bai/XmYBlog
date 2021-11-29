@@ -13,6 +13,8 @@ public class Article {
   private java.sql.Date lastChangeDate;
   private long commentNums;
   private String content;
+  private String summary;
+  private boolean isDraft;
 
   public Article() {
   }
@@ -97,4 +99,19 @@ public class Article {
     this.content = content;
   }
 
+  public String getSummary() {
+    return summary;
+  }
+
+  public void setSummary(String summary) {
+    this.summary = summary;
+  }
+
+  public boolean isDraft() {
+    return isDraft;
+  }
+
+  public void setDraft(boolean draft) {
+    isDraft = draft;
+  }
 }

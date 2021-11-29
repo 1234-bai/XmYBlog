@@ -1,6 +1,5 @@
 <%@ page import="com.Entity.Article" %>
 <%@ page import="com.Service.ArticleService" %>
-
 <%--
   Created by IntelliJ IDEA.
   User: QianXiaoYi
@@ -21,7 +20,7 @@
     <script src="extraLib/editormd/lib/marked.min.js"></script>
     <script src="extraLib/editormd/lib/prettify.min.js"></script>
     <script src="jsLib/ArticleContent.js"></script>
-    <link rel="stylesheet" href="cssLib/Center/article_content.css">
+    <link rel="stylesheet" href="cssLib/Center/article_content.css" />
     <script>
         $(function (){
             articleSupported = [
@@ -39,40 +38,44 @@
     <div id="articles_container_cardList">
       <%
         for (int artIndex = 0; haveArticles && artIndex < articles.length; artIndex++) {
+//            if(articles[artIndex].isDraft()){continue;}
+            Article article = articles[artIndex];
+            long articleID = article.getArticleId();
       %>
       <div id="<%="article_card"+artIndex%>" class = article_card>
-        <a class = article_title onclick="showArticle('${pageContext.request.contextPath}/readArticle',<%=artIndex%>,<%=articles[artIndex].getArticleId()%>)">
+        <a class = article_title onclick="showArticle(<%=artIndex%>,<%=articleID%>)">
           <i class = "fa fa-file-text-o" style="margin-right: 8px; font-weight: 500"></i>
           <span>
-            <%=articles[artIndex].getTitle()%>
+            <%=article.getTitle()%>
           </span>
         </a>
         <span class=article_content>
           <div class="content_text">
-                <%=articles[artIndex].getContent()%>
+              <B>摘要：</B>
+              <%=article.getSummary()%>
           </div>
         </span>
         <div class = article_buttons>
           <div>
             <i class = "fa fa-eye"></i>
             <span class="click-nums">
-                <%=articles[artIndex].getClickNums()%>
+                <%=article.getClickNums()%>
             </span>
           </div>
           <div>
             <i class = "fa fa-commenting-o"></i>
             <span class="comment-nums">
-              <%=articles[artIndex].getCommentNums()%>
+              <%=article.getCommentNums()%>
             </span>
           </div>
           <div>
             <i class="fa fa-thumbs-o-up"></i>
             <span class="support-nums">
-              <%=articles[artIndex].getSupportNums()%>
+              <%=article.getSupportNums()%>
             </span>
           </div>
-          <button>编辑</button>
-          <button>删除</button>
+          <button onclick="editArticle(<%=articleID%>)">编辑</button>
+          <button onclick="deleteArticle(<%=artIndex%>,<%=articleID%>)">删除</button>
         </div>
       </div>
       <%
@@ -84,15 +87,15 @@
               <textarea  id="article-show" style="display: none"></textarea>
         </div>
         <div id="read_button_block">
-            <button id="exit_button" class="read_button">
+            <button id="exit_button" class="read_button" onclick="userFilter(function (){editArticle(readingArticleId)})">
                 <i class="fa fa-pencil"></i>
                 编辑
             </button>
-            <button id="support_button" class="read_button" onclick="supportArticle(servletRootPath+'/supportArticle')">
+            <button id="support_button" class="read_button" onclick="supportArticle()">
                 <i class="fa fa-thumbs-o-up"></i>
                 点赞
             </button>
-            <button id="comment-button" class="read_button" onclick="userFilter(function (){showCommentBlock(servletRootPath+'/readComments')})">
+            <button id="comment-button" class="read_button" onclick="userFilter(function (){showCommentBlock()})">
                 <i class="fa fa-commenting-o"></i>
                 评论
             </button>

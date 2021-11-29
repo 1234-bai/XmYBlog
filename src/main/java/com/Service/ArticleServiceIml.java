@@ -18,9 +18,13 @@ public interface ArticleServiceIml {
 
     boolean decreaseClickNums(int articleID);
 
-    boolean saveArticle(String title, String ownerName, String content, long createTime_ms);
+    boolean saveArticle(String title, String ownerName, String content, String summary, long createTime_ms, boolean isDraft);
 
     boolean increaseCommentNums(int articleID);
 
     boolean decreaseCommentNums(int articleID);
+
+    boolean deleteArticle(int articleID);
+
+    boolean updateArticle(int articleID, String title, String content, String summary, long lastEditTime_ms, boolean isDraft);
 }

@@ -9,7 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String showName = "qian_xiao_yi";
+    String showName =  "qian_xiao_yi";
     String username = (String)session.getAttribute(CONSTANTS.USER_DATA.USERNAME);  //从session获得登录的用户姓名
     Integer userID = -1;
     String nickname = "千小一";
@@ -60,13 +60,12 @@
             )
             sessionStorage.setItem(
                 'showName',
-                '<%=showName%>>'
+                '<%=showName%>'
             )
         })
     </script>
 </head>
 <body>
-<div id = "top"></div>
 <div id = max_div>
     <%@include file="Pages/HomeParts/LeftPart.jsp"%>
     <%@include file="Pages/HomeParts/CenterPart.jsp"%>

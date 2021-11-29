@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.User;
 
 import com.Service.UserService;
 import com.Util.CONSTANTS;

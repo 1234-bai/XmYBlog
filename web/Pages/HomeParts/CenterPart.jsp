@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="cssLib/Center/center_part.css">
 </head>
 <body>
+<div id = "top"></div>
 <div id = center_part class = outer_div>
     <div id = search_bar>
         <input id=bar_text type="text" placeholder="search users by pressing enter" >
@@ -24,7 +25,7 @@
                 </div>
             </div>
             <div id = profile_avatar>
-                <a onclick="<%=(username != null && username.equals(showName)) ? "openImageUploadPage(servletRootPath+'/imageUpload')" : "toLogin()"%>">
+                <a onclick="<%=(username != null && username.equals(showName)) ? "openImageUploadPage()" : "toLogin()"%>">
                     <img src ="<%=pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+showName+"."+avatarType%>">
                 </a>
             </div>

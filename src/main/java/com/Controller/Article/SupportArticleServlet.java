@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.Article;
 
 import com.Service.ArticleService;
 import com.Util.CONSTANTS;
@@ -20,9 +20,9 @@ public class SupportArticleServlet extends HttpServlet {
         }
         try {
             if(success){
-                response.getWriter().write(CONSTANTS.ARTICLES_DATA.SUCCESS);
+                response.getWriter().write(CONSTANTS.SUCCESS);
             } else{
-                response.getWriter().write(CONSTANTS.ARTICLES_DATA.FAIL);
+                response.getWriter().write(CONSTANTS.FAIL);
             }
         } catch (IOException e) {
             e.printStackTrace();

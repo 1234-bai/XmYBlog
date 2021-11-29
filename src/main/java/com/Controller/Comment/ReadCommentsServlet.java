@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.Comment;
 
 import com.Entity.Comment;
 import com.Service.CommentService;
@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-public class readCommentsServlet extends HttpServlet {
+public class ReadCommentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
         doPost(request, response);

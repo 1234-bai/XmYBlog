@@ -1,4 +1,4 @@
-package com.Controller;
+package com.Controller.Article;
 
 import com.Service.ArticleService;
 import com.Util.CONSTANTS;
@@ -14,20 +14,15 @@ public class SaveArticleServlet extends HttpServlet {
         String title = req.getParameter(CONSTANTS.ARTICLES_DATA.TITLE);
         String content = req.getParameter(CONSTANTS.ARTICLES_DATA.CONTENT);
         String username = (String)req.getSession().getAttribute(CONSTANTS.USER_DATA.USERNAME);
+        String summary = req.getParameter(CONSTANTS.ARTICLES_DATA.SUMMARY);
+        if(summary != null){summary = CONSTANTS.getHtmlSummary(summary);}
         long createTime_ms = Long.parseLong(req.getParameter(CONSTANTS.ARTICLES_DATA.CREATE_DATE_MS));
-        System.out.println("************");
-        System.out.println(title);
-        System.out.println(content);
-        System.out.println(username);
-        System.out.println(createTime_ms);
-        System.out.println("************");
-        System.out.println(content.length());
-//        System.out.println(req.getParameter("editor-html-code"));
+        boolean isDraft = Boolean.parseBoolean(req.getParameter(CONSTANTS.ARTICLES_DATA.IS_DRAFT));
         try{
-            if(new ArticleService().saveArticle(title, username, content, createTime_ms)){
-                resp.getWriter().write(CONSTANTS.ARTICLES_DATA.SUCCESS);
+            if(new ArticleService().saveArticle(title, username, content, summary, createTime_ms, isDraft)){
+                resp.getWriter().write(CONSTANTS.SUCCESS);
             } else {
-                resp.getWriter().write(CONSTANTS.ARTICLES_DATA.FAIL);
+                resp.getWriter().write(CONSTANTS.FAIL);
             }
         } catch (IOException e){
             e.printStackTrace();

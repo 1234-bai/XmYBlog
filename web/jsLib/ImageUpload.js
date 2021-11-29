@@ -1,4 +1,4 @@
-function openImageUploadPage(servletURL){
+function openImageUploadPage(){
     layer.open({
         title : '图像上传',
         content : (
@@ -15,8 +15,27 @@ function openImageUploadPage(servletURL){
             '               </li>\n' +
             '           </ul>\n' +
             '            <div style="display: flex;flex-direction: row;margin-top: 30px;">\n' +
-            '                <button id="upload" onclick="clickUpload()" style="margin-right: 15px;">上传</button>\n' +
-            '                <button onclick="submitAvatar(\''+servletURL+'\')">确认</button>\n' +
+            '                <button id="upload" onclick="clickUpload()" ' +
+            '                                   style="margin-right: 15px;' +
+            '                                           background-color: var(--themeColor);\n' +
+            '                                           border: 1px solid var(--themeColor);\n' +
+            '                                           box-shadow: 0 2px 4px var(--theme-primary-4);\n' +
+            '                                           color: #fff;\n' +
+            '                                           border-radius: 4px;\n' +
+            '                                           cursor: pointer;"' +
+            '               >' +
+            '                   上传' +
+            '               </button>\n' +
+            '               <button onclick="submitAvatar()" ' +
+            '                       style="background-color: var(--themeColor);\n' +
+            '                               border: 1px solid var(--themeColor);\n' +
+            '                               box-shadow: 0 2px 4px var(--theme-primary-4);\n' +
+            '                               color: #fff;\n' +
+            '                               border-radius: 4px;\n' +
+            '                               cursor: pointer;"' +
+            '               >' +
+            '                   确认' +
+            '               </button>\n' +
             '            </div>\n' +
             '            <form id="image-form" style="display: none;">\n' +
             '                <input type="file" id="userAvatar" onchange="choseImageFile()">\n' +
@@ -75,11 +94,11 @@ function getObjectURL(file) {   //获得本地上传的文件路径
     return url ;
 }
 
-function submitAvatar(servletURL){
+function submitAvatar(){
     const formData = new FormData();
     formData.append('file', $('#userAvatar')[0].files[0]);
     $.ajax({
-        url : servletURL,
+        url : servletRootPath + "/imageUpload",
         type : "POST",
         data: formData,
         dataType : 'json',

@@ -48,38 +48,50 @@
     <!--响应-->
     <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.Controller.LoginServlet</servlet-class>
+        <servlet-class>com.Controller.User.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>registerServlet</servlet-name>
-        <servlet-class>com.Controller.RegisterServlet</servlet-class>
+        <servlet-class>com.Controller.User.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>saveArticleServlet</servlet-name>
-        <servlet-class>com.Controller.SaveArticleServlet</servlet-class>
+        <servlet-class>com.Controller.Article.SaveArticleServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>readArticleServlet</servlet-name>
-        <servlet-class>com.Controller.ReadArticleServlet</servlet-class>
+        <servlet-class>com.Controller.Article.ReadArticleServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>supportServlet</servlet-name>
-        <servlet-class>com.Controller.SupportArticleServlet</servlet-class>
+        <servlet-class>com.Controller.Article.SupportArticleServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addCommentServlet</servlet-name>
-        <servlet-class>com.Controller.addCommentServlet</servlet-class>
+        <servlet-class>com.Controller.Comment.AddCommentServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>readCommentsServlet</servlet-name>
-        <servlet-class>com.Controller.readCommentsServlet</servlet-class>
+        <servlet-class>com.Controller.Comment.ReadCommentsServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>imageUploadServlet</servlet-name>
-        <servlet-class>com.Controller.imageUploadServlet</servlet-class>
+        <servlet-class>com.Controller.ImageUploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteArticleServlet</servlet-name>
+        <servlet-class>com.Controller.Article.DeleteArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>com.Controller.User.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateArticleServlet</servlet-name>
+        <servlet-class>com.Controller.Article.UpdateArticleServlet</servlet-class>
     </servlet>
 
-<!--    账号登录-->
+    <!--    账号登录-->
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/Pages/Login</url-pattern>
@@ -88,6 +100,11 @@
     <servlet-mapping>
         <servlet-name>registerServlet</servlet-name>
         <url-pattern>/Pages/Register</url-pattern>
+    </servlet-mapping>
+<!--    账号注销-->
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 <!--    文章发布-->
     <servlet-mapping>
@@ -103,6 +120,16 @@
     <servlet-mapping>
         <servlet-name>supportServlet</servlet-name>
         <url-pattern>/supportArticle</url-pattern>
+    </servlet-mapping>
+    <!--    文章删除-->
+    <servlet-mapping>
+        <servlet-name>deleteArticleServlet</servlet-name>
+        <url-pattern>/deleteArticle</url-pattern>
+    </servlet-mapping>
+    <!--    文章更新-->
+    <servlet-mapping>
+        <servlet-name>updateArticleServlet</servlet-name>
+        <url-pattern>/updateArticle</url-pattern>
     </servlet-mapping>
 <!--    评论提交-->
     <servlet-mapping>

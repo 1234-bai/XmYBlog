@@ -25,7 +25,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #08162f;
+    background-color: var(--sidebar-bg);
 }
 
 #article-manager{
@@ -36,14 +36,14 @@ a{
     padding-left: 25px;
 
     font-size: large;
-    color: rgba(124,124,124);
+    color: rgba(124,124,124,0.9);
     font-weight: 500;
     white-space: nowrap;
 }
 
 #article-manager a{
     width: 88px;
-    color: rgba(124,124,124);
+    color: rgba(124,124,124,0.9);
 }
 
 #article-title{
@@ -94,16 +94,22 @@ input{
     background-color: #fc5531;
 }
 
+#avatar img{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
 .editormd-toolbar-container {   /*评论框工具栏*/
     background-color: var(--sidebar-bg);
 }
 
 .cm-s-pastel-on-dark.CodeMirror {  /*评论框代码栏*/
-    background-color: var(--sidebar-bg);
+    background-color: var(--sidebar-bg) !important;
 }
 
 .cm-s-pastel-on-dark .CodeMirror-gutters {  /*代码栏行号*/
-    background-color: var(--sidebar-bg);
+    background-color: var(--sidebar-bg) !important;
 }
 
 .editormd-preview-theme-dark {/*预览框*/

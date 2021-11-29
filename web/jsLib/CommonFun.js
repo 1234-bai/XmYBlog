@@ -20,20 +20,32 @@ function serverErrorTips(){
     })
 }
 
-function loginTips(){
+function confirmOperation(operation, title, statement, buttonText, iconNumber){
     layer.open({
-        title: '温馨提示',
-        content: '亲爱的这位同学，您没有使用这项功能的权限呢。登录后才能使用哦。',
+        title: title,
+        content: statement,
+        icon : iconNumber,
         shadeClose: true,
-        //area: ['400px', '500px'],
-        btn: ['登录','关闭'],
+        btn: [ buttonText,'关闭'],
         btn1: function(){
-            location.href='Pages/Login.jsp';
+            operation()
         },
         btn2: function(){
             layer.close();
         }
     })
+}
+
+function loginTips(){
+    confirmOperation(
+        function () {
+            toLogin()
+        },
+        '温馨提示',
+        '这位亲爱的同学，您没有使用这项功能的权限呢。登录后才能使用哦。',
+        '登录',
+        0
+    )
 }
 
 /**
