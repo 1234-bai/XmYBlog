@@ -32,7 +32,8 @@ public class ReadArticleServlet extends HttpServlet {
             if(article == null){
                 response.getWriter().write("{\"fail\": true}");
             } else{ //成功获得文章内容。然后增加点击量
-                if(otherReading) articleService.increaseClickNums(articleID);
+//                if(otherReading)
+              articleService.increaseClickNums(articleID);
                 response.getWriter().write(JSONObject.toJSONString(article));
             }
         } catch (IOException e) {

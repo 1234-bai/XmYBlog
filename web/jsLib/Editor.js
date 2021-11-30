@@ -69,3 +69,10 @@ function updateArticle(isDraft){
     $("#form-id").val(sessionStorage.getItem('article-id'))
     submitArticle(servletRootPath + '/updateArticle',isDraft)
 }
+
+function backToManage(){
+    sessionStorage.removeItem('article-id')
+    sessionStorage.removeItem('article-title')
+    sessionStorage.removeItem('article-content')
+    location.href = servletRootPath+'/manageArticles'
+}

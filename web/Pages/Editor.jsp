@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../extraLib/editormd/css/editormd.css" />
     <link rel="stylesheet" href="../cssLib/editor.css">
     <link rel="stylesheet" href="../cssLib/theme_dark.css">
+    <link rel="shortcut icon" href="../resource/img/favicon.png" >
     <script src="../extraLib/jQuery/jquery.js"></script>
     <script src="../jsLib/CommonFun.js"></script>   <%-- 共同使用的JavaScript函数库 --%>
     <script type="text/javascript" src = ../extraLib/layer/layer.js></script>  <%-- 弹出框库 --%>
@@ -32,7 +33,7 @@
 <div id="editor-header">
     <div id="article-manager">
         <i class="fa fa-angle-left" aria-hidden="true" style="font-size: larger;"></i>
-        <a href="test.jsp">文章管理</a>
+        <a onclick="userFilter(function (){backToManage()})">文章管理</a>
     </div>
     <div id="article-title">
         <input id="title-text" type="text" placeholder="请输入文章标题（最多100字）">

@@ -19,5 +19,9 @@ public class UserService {
         return userDao.addUser(name, password) == 1;
     }
 
+    public boolean haveUser(String username){
+        User user = userDao.getUser(username);  //由于MySQL不区分大小写，所以还需再判断一下
+        return user != null && user.getUsername().equals(username);
+    }
 
 }

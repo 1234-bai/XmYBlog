@@ -15,12 +15,6 @@ $(function () {
 
     //设置悬浮文字
     $("#right_top_menu_hidden_list").hide();
-    $("#chart").mouseover(function (){
-        $("#right_top_menu_hidden_list").fadeIn("slow");
-    });
-    $("#chart").mouseout(function (){
-        $("#right_top_menu_hidden_list").fadeOut("slow");
-    });
 });
 
 
@@ -39,4 +33,8 @@ function logout(){
         '注销',
         3
     )
+}
+
+function showHideList() {
+    $("#right_top_menu_hidden_list").fadeToggle("slow");
 }

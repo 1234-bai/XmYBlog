@@ -137,7 +137,7 @@ label{
 
 .img-box{
     width: 50%;
-    background-image: url(../resourse/img/register_background.png);
+    background-image: url(../resource/img/register_background.png);
     background-size: cover;
     opacity: 80%;
     border-radius: 0 10px 10px 0;
@@ -188,7 +188,7 @@ label{
     .out-box .register-box{
         width: 100%;
         border-radius: 10px;
-        background-image: url(../resourse/img/register_background.png);
+        background-image: url(../resource/img/register_background.png);
         background-size: cover;
         opacity: 90%;
     }

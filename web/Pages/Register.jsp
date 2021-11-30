@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="../cssLib/register.css">
     <link rel="stylesheet" href="../extraLib/layer/skin/layer.css">
+    <link rel="shortcut icon" href="../resource/img/favicon.png" >
 </head>
 <body>
 <div class="out-box">

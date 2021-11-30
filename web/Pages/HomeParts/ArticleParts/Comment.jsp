@@ -33,19 +33,6 @@
                 <div class="card-content">无所畏惧方能翱翔于天际</div>
             </div>
         </div>
-        <div class="comment-card">
-            <div class="comment-card-title">
-                <div class="card-title-level">#1楼</div>
-                <div class="card-title-username">千小一</div>
-                <div class="card-title-date">2021/11/26</div>
-            </div>
-            <div class="comment-card-content">
-                <div class="card-avatar">
-                    <img src="${pageContext.servletContext.contextPath}/resource/img/adminProfile.jpg" alt="sorry, the picture failed">
-                </div>
-                <div class="card-content">无所畏惧方能翱翔于天际</div>
-            </div>
-        </div>
     </div>
 </div>
 <div id="comment-form">

@@ -10,6 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="cssLib/Center/center_part.css">
+    <script src="jsLib/CenterPart.js"></script>
 </head>
 <body>
 <div id = "top"></div>
@@ -21,11 +22,11 @@
         <div id = profile>
             <div id = profile_banner>
                 <div id = profile_signature>
-                    <span>我不想做前端！！！啊啊啊啊啊啊！！真的巨难！！！</span>
+                    <span>心怀无惧，方能翱翔于天际！</span>
                 </div>
             </div>
             <div id = profile_avatar>
-                <a onclick="<%=(username != null && username.equals(showName)) ? "openImageUploadPage()" : "toLogin()"%>">
+                <a onclick="<%=(hasUser && username.equals(showName)) ? "openImageUploadPage()" : "toLogin()"%>">
                     <img src ="<%=pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+showName+"."+avatarType%>">
                 </a>
             </div>

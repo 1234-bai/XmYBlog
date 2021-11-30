@@ -20,16 +20,16 @@
         <div id = left_menu class = side_wrapper>
             <h3>MENU</h3>
             <ul>
-                <a href="Pages/test.jsp" target="_blank">
+                <a onclick="userFilter(function (){location.href = servletRootPath+'/manageArticles'})">
                     <i class = "fa fa-table" style="color: #1B86F9"></i>文章管理
                 </a>
                 <a onclick="userFilter(function (){location.href = 'Pages/Editor.jsp'})">
                     <i class = "fa fa-pencil-square" style="color: #e7339f"></i>新文章
                 </a>
-                <a href="" target="_blank">
+                <a href="Pages/test.jsp">
                     <i class = "fa fa-envelope" style="color: #48c774"></i>日志查看
                 </a>
-                <a href="" target="_blank">
+                <a href="Pages/test.jsp">
                     <i class="fa fa-cog" style="color: #00d1b2"></i>账号管理
                 </a>
             </ul>

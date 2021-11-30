@@ -45,21 +45,6 @@
     font-size: 20px;
 }
 
-#right_top_menu_hidden_list{
-    position: absolute;
-    top: 20px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    background: var(--body-bg);
-}
-
-#right_top_menu_hidden_list li{
-    display: flex;
-    white-space: nowrap;
-    font-size: 13px;
-    line-height: 1.7;
-}
-
 #right_top_menu_photo{
     margin-left: auto;
     margin-right: 20px;
@@ -80,15 +65,50 @@
     color: navajowhite;
 }
 
+#right_top_menu_photo li:hover{
+    color: navajowhite;
+}
+
 #right_top_menu_photo span{
     font-weight: 600;
     font-size: 15px;
-    color: #595b6c;;
+    color: #595b6c;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     white-space: nowrap;
+}
+
+#right_top_menu_hidden_list{
+    position: absolute;
+    top: 45px;
+    right: 40px;
+    border-radius: 4px;
+    background: black;
+    padding: 8px 16px;
+}
+
+#right_top_menu_hidden_list li {
+    display: flex;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.7;
+    cursor: pointer;
+
+    font-weight: 600;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+#right_top_menu_hidden_list:first-child{
+    margin-bottom: 4px;
+}
+
+#right_top_menu_hidden_list li i{
+    margin-right: 5px;
+    font-weight: 500;
 }
 
 #right_calendar{
@@ -181,6 +201,7 @@
     background-color: #303447FF;
     font-size: 13px;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 #info_links li{

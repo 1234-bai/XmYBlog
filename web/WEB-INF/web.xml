@@ -90,6 +90,14 @@
         <servlet-name>updateArticleServlet</servlet-name>
         <servlet-class>com.Controller.Article.UpdateArticleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>jumpToOtherHomeServlet</servlet-name>
+        <servlet-class>com.Controller.JumpToOthersHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageArticleServlet</servlet-name>
+        <servlet-class>com.Controller.Article.ManageArticleServlet</servlet-class>
+    </servlet>
 
     <!--    账号登录-->
     <servlet-mapping>
@@ -131,6 +139,11 @@
         <servlet-name>updateArticleServlet</servlet-name>
         <url-pattern>/updateArticle</url-pattern>
     </servlet-mapping>
+<!--    文章管理-->
+    <servlet-mapping>
+        <servlet-name>manageArticleServlet</servlet-name>
+        <url-pattern>/manageArticles</url-pattern>
+    </servlet-mapping>
 <!--    评论提交-->
     <servlet-mapping>
         <servlet-name>addCommentServlet</servlet-name>
@@ -145,6 +158,11 @@
     <servlet-mapping>
         <servlet-name>imageUploadServlet</servlet-name>
         <url-pattern>/imageUpload</url-pattern>
+    </servlet-mapping>
+<!--    跳转到他人主页查看文章-->
+    <servlet-mapping>
+        <servlet-name>jumpToOtherHomeServlet</servlet-name>
+        <url-pattern>/jump</url-pattern>
     </servlet-mapping>
 
 </web-app>

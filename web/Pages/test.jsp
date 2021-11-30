@@ -10,6 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <script src="../extraLib/jQuery/jquery.js"></script> <%-- jQuery库 --%>
+    <link rel="shortcut icon" href="../resource/img/favicon.png" >
 </head>
 <body>
 

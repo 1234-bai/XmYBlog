@@ -32,11 +32,11 @@
 }
 
 #float_bar #back_top{
-    transform: translateY(-140px);
+    transform: translateY(-50px);
 }
 
 #float_bar #theme_transform{
-    transform: translateY(-50px);
+    transform: translateY(-140px);
 }
 
 #float_bar #up_array{

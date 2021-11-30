@@ -4,7 +4,6 @@
   User: QianXiaoYi
   Date: 2021/10/8
   Time: 19:09
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -17,6 +16,7 @@
   <link rel="stylesheet" href="../cssLib/login.css">
   <!-- 图标库 -->
   <link rel="stylesheet" href="../extraLib/fontAwesome/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="../resource/img/favicon.png" >
 </head>
 <body>
 <div class = "main-part">

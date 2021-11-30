@@ -73,7 +73,7 @@ public class CONSTANTS {
 
         public static final String IS_DRAFT = "isDraft";
 
-        public static final String READING = "reading";     //文章是阅读传内容还是，编辑传内容。编辑传内容是不增加点击量的。
+        public static final String MANAGE_ARTICLES = "manageArticles";     //文章是阅读传内容还是，编辑传内容。编辑传内容是不增加点击量的。
     }
 
     public static final class COMMENT_DATA {

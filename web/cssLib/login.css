@@ -35,7 +35,7 @@ body{
     border-radius: 20px 5px 5px 20px;
 
     background-size: cover;
-    background-image: url("../resource/img/background.png");
+    background-image: url(../resource/img/login_background.png);
     opacity: 80%;
 }
 
@@ -123,7 +123,7 @@ body{
         width: 100%;
         border-radius: 20px;
         background-size: cover;
-        background-image: url("../resourse/img/background.png");
+        background-image: url(../resource/img/login_background.png);
     }
 }
 

@@ -38,8 +38,8 @@
     <div id="articles_container_cardList">
       <%
         for (int artIndex = 0; haveArticles && artIndex < articles.length; artIndex++) {
-//            if(articles[artIndex].isDraft()){continue;}
             Article article = articles[artIndex];
+            if(article.isDraft() && !managingArticle){continue;}
             long articleID = article.getArticleId();
       %>
       <div id="<%="article_card"+artIndex%>" class = article_card>
@@ -48,6 +48,7 @@
           <span>
             <%=article.getTitle()%>
           </span>
+            <span style="color: red"><%=(managingArticle && article.isDraft() ? "（草稿）" : "")%></span>
         </a>
         <span class=article_content>
           <div class="content_text">

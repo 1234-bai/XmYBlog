@@ -6,9 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    boolean hasUser = (username != null);
-%>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -30,28 +27,29 @@
         </div>
         <div class = right_top_menu_button>
             <i id = "chart" class="fa fa-bar-chart"></i>
-            <ul id = right_top_menu_hidden_list>
-                <li>随笔:
-                    <span>0</span>
-                </li>
-                <li>阅读:
-                    <span>0</span>
-                </li>
-            </ul>
         </div>
         <div id = right_top_menu_photo>
-            <a onclick="<%= hasUser ? "logout()" : "toLogin()"%>" >
+            <a onclick="<%= hasUser ? "showHideList()" : "toLogin()"%>" >
                 <%
-                    out.write(hasUser ? "<img src=\""+pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+username+"."+avatarType+"\">" : "<span>登录/注册</span>");
+                    out.write(hasUser ? "<img src=\""+pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+ username +"."+avatarType+"\">" : "<span>登录/注册</span>");
                 %>
-
             </a>
+            <ul id = right_top_menu_hidden_list>
+                <li onclick="changeShowUser('<%=username%>')">
+                    <i class="fa fa-home" style="color: #1B86F9"></i>
+                    主页
+                </li>
+                <li onclick="logout()">
+                    <i class="fa fa-sign-out" style="color: red"></i>
+                    登出
+                </li>
+            </ul>
         </div>
     </div>
     <div id = right_calendar>
         <div id = calendar_wrapper>
             <!--获取当前时间，并在页面显示-->
-            <img id = calendar_season_picture alt="十分抱歉，图片找不到了" src="">
+            <img id = calendar_season_picture>
             <div id = calender_describe></div>
             <div id = calender_date_text></div>
             <div id = calender_date_picture>
@@ -64,10 +62,9 @@
         <div id = info_links>
             <h3>常用链接</h3>
             <ul>
-                <li>我的文章</li>
-                <li>我的收藏</li>
-                <li>我的评论</li>
-                <li>我的参与</li>
+                <li onclick="userFilter(function (){changeShowUser('<%=username%>')})">我的文章</li>
+                <li onclick="function x() {location.href = 'test.jsp'}">我的收藏</li>
+                <li onclick="function x() {location.href = 'test.jsp'}">我的评论</li>
             </ul>
         </div>
         <div id = info_comments>
