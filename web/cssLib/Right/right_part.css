@@ -97,7 +97,6 @@
     cursor: pointer;
 
     font-weight: 600;
-    color: whitesmoke;
     justify-content: center;
     align-items: center;
 }
@@ -108,7 +107,7 @@
 
 #right_top_menu_hidden_list li i{
     margin-right: 5px;
-    font-weight: 500;
+    font-size: 20;
 }
 
 #right_calendar{

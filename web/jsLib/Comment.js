@@ -15,7 +15,7 @@ function submitComment(servletURL, articleID) {
                 $("#comment-button").click()
                 let select = $("#commentNums");
                 select.text(parseInt(select.text())+1)
-                select = $("#article_card"+readingArticleIndex+" .comment-nums")   //点击量加1
+                select = $("#article_card"+readingArticleIndex+" .comment-nums")   //评论量加1
                 select.text(parseInt(select.text())+1)
             } else{
                 layer.alert("保存失败！也许是文本太长了呢！",{

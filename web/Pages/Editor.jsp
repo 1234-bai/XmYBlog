@@ -42,7 +42,7 @@
         <button id="article-save" onclick="saveArticle(true)">保存草稿</button>
         <button id="article-send" onclick="saveArticle(false)">发布文章</button>
         <div id="user-profile">
-            <a id="avatar" href="../Home.jsp">
+            <a id="avatar" onclick="backToHome()">
                 <img src="<%=pageContext.getServletContext().getContextPath()+CONSTANTS.IMAGE_UPLOAD.RELATIVE_PATH+"/"+username+"."+avatarType%>" alt="找不到了">
             </a>
             <div id="option-box" style="display: none;">

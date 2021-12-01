@@ -82,8 +82,8 @@
     <div id = theme_transform class = float_button style="display: none">
         <i class = "fa fa-adjust"></i>
     </div>
-    <div id = back_top class = float_button >
-        <a class = "fa fa-rocket" onclick="userFilter(function (){changeShowUser('<%=username%>')})"></a>
+    <div id = back_top class = float_button onclick="userFilter(function (){changeShowUser('<%=username%>')})">
+        <i class = "fa fa-rocket" ></i>
     </div>
     <div id = up_array class = float_button onclick="showOtherButton()">
         <i id = "float_angle" class = "fa fa-angle-down"></i>

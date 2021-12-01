@@ -6,12 +6,12 @@ import com.Entity.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDao {
+public class UserDao extends BaseDao{
 
     public User getUser(String username) {
         User user = null;
         String sql = "select * from users where username = ?";
-        ResultSet resultSet = BaseDao.executeQuery(BaseDao.getConnection(), sql, new Object[]{username});
+        ResultSet resultSet = executeQuery(getConnection(), sql, new Object[]{username});
         try{
             if(resultSet!=null && resultSet.next()){
                 user = new User();
@@ -21,7 +21,7 @@ public class UserDao {
                 user.setNickname(resultSet.getString("nickname"));
                 user.setAvatarType(resultSet.getString("avatarType"));
             }
-            BaseDao.close();
+            close();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -34,8 +34,8 @@ public class UserDao {
     */
     public int addUser(String username, String password){
         String sql = "insert into myblog.users(username, password) values(?, ?)";
-        int influencedStatements = BaseDao.executeUpdate(BaseDao.getConnection(), sql, new String[]{username, password});
-        BaseDao.close();
+        int influencedStatements = executeUpdate(getConnection(), sql, new String[]{username, password});
+        close();
         return influencedStatements;
     }
 

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class ArticleDao {
+public class ArticleDao extends BaseDao{
 
     public int addArticle(
             String title,
@@ -21,13 +21,13 @@ public class ArticleDao {
                      "myblog.articles(title, ownerName, content, summary, createDate, lastChangeDate,  isDraft) " +
                      "values(?, ?, ?, ?, ?, ?, ?)";
         Object[] params = {title, ownerName, content, summary, createDate, createDate, isDraft};
-        return BaseDao.executeUpdate(BaseDao.getConnection(), sql, params);
+        return executeUpdate(getConnection(), sql, params);
     }
 
     public Article getArticle(int articleID){
         String sql = "select * from myblog.articles where articleID = ?";
         Object[] params = {articleID};
-        ResultSet res = BaseDao.executeQuery(BaseDao.getConnection(), sql, params);
+        ResultSet res = executeQuery(getConnection(), sql, params);
         Article art = null;
         try {
             if(res.next()){
@@ -43,7 +43,7 @@ public class ArticleDao {
     public Article[] getArticlesAll(String username){
         String sql = "select * from myblog.articles where ownerName = ?";
         Object[] params = {username};
-        ResultSet res = BaseDao.executeQuery(BaseDao.getConnection(), sql, params);
+        ResultSet res = executeQuery(getConnection(), sql, params);
         Vector<Article>resultGroup = new Vector<>();
         try {
             while(res.next()){
@@ -51,7 +51,7 @@ public class ArticleDao {
                 setArticleProperties(res, art);
                 resultGroup.add(art);
             }
-            BaseDao.close();
+            close();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -135,8 +135,8 @@ public class ArticleDao {
     }
 
     private int execute(String sql, Object[] params){
-        int influencedLines = BaseDao.executeUpdate(BaseDao.getConnection(), sql, params);
-        BaseDao.close();
+        int influencedLines = executeUpdate(getConnection(), sql, params);
+        close();
         return influencedLines;
     }
 }

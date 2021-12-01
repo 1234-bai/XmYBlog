@@ -23,7 +23,7 @@
                 <a onclick="userFilter(function (){location.href = servletRootPath+'/manageArticles'})">
                     <i class = "fa fa-table" style="color: #1B86F9"></i>文章管理
                 </a>
-                <a onclick="userFilter(function (){location.href = 'Pages/Editor.jsp'})">
+                <a onclick="userFilter(function (){window.open(servletRootPath+'/Pages/Editor.jsp','_blank')})">
                     <i class = "fa fa-pencil-square" style="color: #e7339f"></i>新文章
                 </a>
                 <a href="Pages/test.jsp">

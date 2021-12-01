@@ -131,7 +131,7 @@ function showArticle(artIndex, articleID) {
                 })
                 return
             }
-            readArticleSuccess(msg,artIndex, articleID)
+            readArticleSuccess(msg, artIndex, articleID)
         },
         error:function () {
             serverErrorTips()
@@ -150,7 +150,7 @@ function loadCommentInf(msg){
             '                <div class="card-title-date">'+msg[i].createDate+'</div>\n' +
             '            </div>\n' +
             '            <div class="comment-card-content">\n' +
-            '                <div class="card-avatar" onclick="changeShowUser('+msg[i].owner+')">\n' +
+            '                <div class="card-avatar" onclick="changeShowUser(\''+msg[i].owner+'\')">\n' +
             '                    <img src="'+servletRootPath+'/resource/img/userAvatar/'+msg[i].owner+'.jpg" alt="sorry, the picture failed">\n' +
             '                </div>\n' +
             '                <div class="card-content">'+msg[i].content+'</div>\n' +
@@ -265,7 +265,7 @@ function editArticleCore(articleID) {
             sessionStorage.setItem('article-id', articleID)
             sessionStorage.setItem('article-title', msg.title)
             sessionStorage.setItem('article-content', msg.content)
-            location.href = 'Pages/Editor.jsp'
+            window.open(servletRootPath+'/Pages/Editor.jsp', '_blank')
         },
         error : function () {
             serverErrorTips()

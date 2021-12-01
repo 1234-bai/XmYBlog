@@ -22,7 +22,7 @@ $(function() {
 });
 
 function submitArticle(servletPath, isDraft){
-    if(isEmptyText("#title-text")){return;}
+    if(isEmptyText("#title-text", '文章题目')){return;}
     $("#form-title").val($("#title-text").val())
     $("#form-time").val(new Date().getTime())
     $("#form-type").val(isDraft.toString())
@@ -43,6 +43,7 @@ function submitArticle(servletPath, isDraft){
                     },
                     btn2: function(){
                         layer.close();
+                        location.href = 'Editor.jsp'
                     }
                 })
             } else{
@@ -75,4 +76,11 @@ function backToManage(){
     sessionStorage.removeItem('article-title')
     sessionStorage.removeItem('article-content')
     location.href = servletRootPath+'/manageArticles'
+}
+
+function backToHome(){
+    sessionStorage.removeItem('article-id')
+    sessionStorage.removeItem('article-title')
+    sessionStorage.removeItem('article-content')
+    location.href = servletRootPath + '/Home.jsp'
 }

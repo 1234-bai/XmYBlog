@@ -4,6 +4,7 @@ import com.Util.CONSTANTS;
 
 import java.io.*;
 import java.sql.*;
+import java.util.Objects;
 import java.util.Properties;
 
 public class BaseDao {
@@ -20,7 +21,7 @@ public class BaseDao {
         BufferedReader bufferedReader = null;
         Properties properties = new Properties();
         try {
-            String path = BaseDao.class.getClassLoader().getResource("SQL.properties").getPath();
+            String path = Objects.requireNonNull(BaseDao.class.getClassLoader().getResource("SQL.properties")).getPath();
             bufferedReader = new BufferedReader(new FileReader(path));
             properties.load(bufferedReader);
             bufferedReader.close();

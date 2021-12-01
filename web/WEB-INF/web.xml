@@ -80,7 +80,7 @@
     </servlet>
     <servlet>
         <servlet-name>deleteArticleServlet</servlet-name>
-        <servlet-class>com.Controller.Article.DeleteArticleServlet</servlet-class>
+        <servlet-class>com.Controller.Article.DeleteServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>logoutServlet</servlet-name>

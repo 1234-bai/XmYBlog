@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CommentDao {
+public class CommentDao extends BaseDao{
 
     /**
      * 得到具体参数的全部评论
@@ -15,7 +15,7 @@ public class CommentDao {
      * @return 返回得到的评论集合
      */
     private Comment[] getComments(String sql, Object[] params){
-        ResultSet res = BaseDao.executeQuery(BaseDao.getConnection(), sql, params);
+        ResultSet res = executeQuery(getConnection(), sql, params);
         ArrayList<Comment> comments = new ArrayList<>();
         try {
             while (res.next()){
@@ -27,7 +27,7 @@ public class CommentDao {
                 comment.setCreateDate(res.getDate("createDate"));
                 comments.add(comment);
             }
-            BaseDao.close();
+            close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -69,8 +69,8 @@ public class CommentDao {
                 "myblog.comments(owner, targetArticleID, content, createDate) " +
                 "values (?, ?, ?, ?)";
         Object[] params = {owner, articleID, content, createDate};
-        int influencedLines = BaseDao.executeUpdate(BaseDao.getConnection(), sql, params);
-        BaseDao.close();
+        int influencedLines = executeUpdate(getConnection(), sql, params);
+        close();
         return influencedLines;
     }
 }

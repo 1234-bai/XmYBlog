@@ -48,9 +48,9 @@
   function Login_submit(){
 
     let username = $("#username").val();
-    if(isEmptyText("#username")){ return; }
+    if(isEmptyText("#username", '用户名')){ return; }
     let password = $("#password").val();
-    if(isEmptyText("#password")){ return;}
+    if(isEmptyText("#password", '密码')){ return;}
 
     if(!isValidUser(username)){
       layer.alert('用户名不符合格式！',{
@@ -79,10 +79,7 @@
         }
       },
       error:function () {
-        layer.alert("未知错误!",{
-          title:'警告！',
-          icon:0
-        })
+        serverErrorTips()
       }
     })
   }

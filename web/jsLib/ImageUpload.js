@@ -17,28 +17,30 @@ function openImageUploadPage(){
             '            <div style="display: flex;flex-direction: row;margin-top: 30px;">\n' +
             '                <button id="upload" onclick="clickUpload()" ' +
             '                                   style="margin-right: 15px;' +
-            '                                           background-color: var(--themeColor);\n' +
-            '                                           border: 1px solid var(--themeColor);\n' +
-            '                                           box-shadow: 0 2px 4px var(--theme-primary-4);\n' +
-            '                                           color: #fff;\n' +
-            '                                           border-radius: 4px;\n' +
+            '                                           padding: 4px 12px;' +
+            '                                           background-color: var(--themeColor);' +
+            '                                           border: 1px solid var(--themeColor);' +
+            '                                           box-shadow: 0 2px 4px var(--theme-primary-4);' +
+            '                                           color: #fff;' +
+            '                                           border-radius: 4px;' +
             '                                           cursor: pointer;"' +
             '               >' +
             '                   上传' +
             '               </button>\n' +
             '               <button onclick="submitAvatar()" ' +
-            '                       style="background-color: var(--themeColor);\n' +
-            '                               border: 1px solid var(--themeColor);\n' +
-            '                               box-shadow: 0 2px 4px var(--theme-primary-4);\n' +
-            '                               color: #fff;\n' +
-            '                               border-radius: 4px;\n' +
+            '                       style="background-color: var(--themeColor);' +
+            '                               padding: 4px 12px;' +
+            '                               border: 1px solid var(--themeColor);' +
+            '                               box-shadow: 0 2px 4px var(--theme-primary-4);' +
+            '                               color: #fff;' +
+            '                               border-radius: 4px;' +
             '                               cursor: pointer;"' +
             '               >' +
             '                   确认' +
             '               </button>\n' +
             '            </div>\n' +
             '            <form id="image-form" style="display: none;">\n' +
-            '                <input type="file" id="userAvatar" onchange="choseImageFile()">\n' +
+            '                <input type="file" id="userAvatar" accept=".jpg" onchange="choseImageFile()">\n' +
             '            </form>\n' +
             '       </div>\n'
         ),
@@ -107,9 +109,18 @@ function submitAvatar(){
         processData: false,
         success : function(data) {
             if(data.success === true){
-                alert("上传成功！")
+                layer.alert("上传成功！",{
+                    title:'恭喜',
+                    icon: 1,
+                    yes : function(){
+                        location.href = 'Home.jsp';
+                    }
+                })
             } else{
-                alert("上传失败！")
+                layer.alert("上传失败！",{
+                    title:'遗憾',
+                    icon:0
+                })
             }
         },
         error : function(data) {

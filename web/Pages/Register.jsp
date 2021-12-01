@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>REGISTER</title>
+    <title>XmYBlog--注册</title>
 
     <script src="../extraLib/jQuery/jquery.js"></script> <%-- jQuery库 --%>
     <script type="text/javascript" src = ../extraLib/layer/layer.js></script>
@@ -64,9 +64,9 @@
 <script>
     // 函数太长，提取函数
     function submit() {
-        if(isEmptyText("#Username")){  return; }
-        if(isEmptyText("#Password")){ return; }
-        if(isEmptyText("#Retype-Password")){ return; }
+        if(isEmptyText("#Username",'用户名')){  return; }
+        if(isEmptyText("#Password",'密码')){ return; }
+        if(isEmptyText("#Retype-Password",'再次输入密码')){ return; }
         let userName = $("#Username").val();
         let password = $("#Password").val();
         let retype_password = $("#Retype-Password").val();
@@ -99,6 +99,7 @@
                         title: '信息',
                         content: '注册成功！',
                         shadeClose: true,
+                        icon : 1 ,
                         //area: ['400px', '500px'],
                         btn: ['登录','关闭'],
                         btn1: function(){
@@ -116,10 +117,7 @@
                 }
             },
             error:function () {
-                layer.alert('出现错误!!', {
-                    title: '提示框',
-                    icon: 0
-                })
+                serverErrorTips()
             }
         });
     }

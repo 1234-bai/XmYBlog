@@ -29,8 +29,8 @@ function logout(){
             location.href = servletRootPath + "/logout"
         },
         '询问',
-        '确认要注销吗？',
-        '注销',
+        '确认要登出吗？',
+        '登出',
         3
     )
 }
